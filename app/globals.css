@@ -13,12 +13,13 @@
     --brand-red-glow: rgba(211, 23, 0, 0.28);
 
     /* Surfaces & Backgrounds */
-    --page-bg: #f5af00; /* Same golden color as the hero */
-    --hero-bg: #f5af00;
+    --page-bg: #fbf9f5; /* Warm appetizing off-white canvas (relieves eye strain) */
+    --hero-bg: linear-gradient(150deg, #f5af00 0%, #ff9800 60%, #f57c00 100%);
     --surface-card: #ffffff;
     --surface-card-hover: #fffdfa;
     --surface-subtle: #f2eee7;
     --border-light: rgba(0, 0, 0, 0.06);
+    --border-warm: rgba(211, 23, 0, 0.15);
 
     /* Typography */
     --text-primary: #1c1917;
@@ -86,7 +87,10 @@ html[dir="rtl"] body {
   position: relative;
   background: var(--hero-bg);
   color: var(--text-primary);
-  padding: 1rem 1rem 1.75rem;
+  padding: 1rem 1rem 2rem;
+  border-bottom-left-radius: 28px;
+  border-bottom-right-radius: 28px;
+  box-shadow: 0 10px 28px rgba(245, 175, 0, 0.22);
   z-index: 20;
 }
 
@@ -233,13 +237,13 @@ html[dir="rtl"] body {
 #category-nav {
   position: sticky;
   top: 0;
-  background: rgba(245, 175, 0, 0.94); /* Seamless background with hero */
+  background: rgba(255, 255, 255, 0.94); /* Clean frosted white navigation */
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   z-index: 100;
-  padding: 8px 0;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+  padding: 10px 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  border-bottom: 2px solid rgba(211, 23, 0, 0.12); /* Subtle red accent underline */
   transition: all 0.2s ease;
 }
 
@@ -290,6 +294,7 @@ html[dir="rtl"] body {
 
 .nav-pill:hover {
   color: var(--brand-red);
+  border-color: var(--brand-red);
   transform: translateY(-2px);
 }
 
@@ -314,7 +319,7 @@ html[dir="rtl"] body {
   padding: 1.5rem 1rem 3rem;
   max-width: 960px;
   margin: 0 auto;
-  background-color: var(--page-bg); /* Same color as hero */
+  background-color: var(--page-bg); /* Calming warm off-white */
 }
 
 /* Category Sections */
@@ -327,9 +332,9 @@ html[dir="rtl"] body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid rgba(211, 23, 0, 0.18); /* Red accent line */
 }
 
 .category-title-wrapper {
@@ -339,16 +344,17 @@ html[dir="rtl"] body {
 }
 
 .category-header-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
   background: #ffffff;
   color: var(--brand-red);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.05rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  font-size: 1.1rem;
+  border: 1.5px solid rgba(211, 23, 0, 0.15);
+  box-shadow: 0 2px 8px rgba(211, 23, 0, 0.08);
 }
 
 .category-heading {
@@ -395,6 +401,7 @@ html[dir="rtl"] body {
 .food-card:hover {
   background: var(--surface-card-hover);
   transform: translateY(-3px);
+  border-color: rgba(211, 23, 0, 0.22);
   box-shadow: var(--shadow-card-hover);
 }
 
@@ -504,6 +511,7 @@ html[dir="rtl"] body {
   font-weight: 900;
   font-size: 0.88rem;
   background: var(--brand-red-subtle);
+  border: 1px solid rgba(211, 23, 0, 0.12);
   padding: 2px 8px;
   border-radius: var(--radius-full);
   white-space: nowrap;
