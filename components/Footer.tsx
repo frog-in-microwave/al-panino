@@ -48,7 +48,7 @@ export default function Footer({ lang }: FooterProps) {
                   <span dir="ltr">{b.phoneDisplay}</span>
                 </a>
                 <a
-                  href={`https://wa.me/${b.whatsapp}?text=${encodeURIComponent(t.whatsappGreeting)}`}
+                  href={`https://wa.me/${b.whatsapp.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(t.whatsappGreeting)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="branch-action-pill branch-whatsapp-pill"
@@ -106,7 +106,7 @@ export default function Footer({ lang }: FooterProps) {
               <i className="fa-brands fa-facebook-f"></i>
             </a>
             <a
-              href={`https://wa.me/${branches[0].whatsapp}?text=${encodeURIComponent(t.whatsappGreeting)}`}
+              href={`https://wa.me/${branches[0].whatsapp.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(t.whatsappGreeting)}`}
               target="_blank"
               rel="noreferrer"
               aria-label="WhatsApp"

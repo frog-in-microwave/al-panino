@@ -225,7 +225,7 @@ export default function MenuClient({ initialLang }: { initialLang: Language }) {
       {/* 5. Mobile Floating WhatsApp Button (Arrow up removed) */}
       <div className="floating-action-bar">
         <a
-          href={`https://wa.me/${ghazieh.whatsapp}?text=${encodeURIComponent(
+          href={`https://wa.me/${ghazieh.whatsapp.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(
             t.whatsappGreeting
           )}`}
           target="_blank"

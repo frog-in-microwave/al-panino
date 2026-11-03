@@ -46,14 +46,14 @@ export const branches = [
       en: "Ghazieh Branch",
       ar: "فرع الغازية",
     },
-    phone: "03805267",
-    phoneDisplay: "03 / 805 267",
-    whatsapp: "9613805267",
+    phone: "+96170549331",
+    phoneDisplay: "+961 70 549 331",
+    whatsapp: "+96170549331",
     address: {
       en: "Main Street, Ghazieh, South Lebanon",
       ar: "الشارع العام، الغازية، جنوب لبنان",
     },
     mapEmbedUrl:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1663.2784919797728!2d35.360842072908035!3d33.512901509958375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151ef1a77fb37f07%3A0x6fdf3627f6b45177!2s961%20FOOD!5e0!3m2!1sen!2slb!4v1787143468615!5m2!1sen!2slb",
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d961.1857954255064!2d35.36117669117023!3d33.50951197108823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151ef189a1364a2d%3A0x7d947408a6fb1851!2sG956%2BVG5%2C%20Ghaziyeh!5e0!3m2!1sen!2slb!4v1793744670273!5m2!1sen!2slb",
   },
 ];

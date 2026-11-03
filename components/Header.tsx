@@ -63,7 +63,7 @@ export default function Header({ lang, changeLanguage }: HeaderProps) {
           </a>
 
           <a
-            href={`https://wa.me/${ghazieh.whatsapp}?text=${encodeURIComponent(
+            href={`https://wa.me/${ghazieh.whatsapp.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(
               t.whatsappGreeting
             )}`}
             target="_blank"
