@@ -1,0 +1,314 @@
+{
+  "categories": [
+    {
+      "id": "sandwiches",
+      "order": 1,
+      "name": {
+        "en": "Paninis & Sandwiches",
+        "ar": "سندويشات وبانينو"
+      },
+      "icon": "fa-solid fa-bread-slice"
+    },
+    {
+      "id": "crispy-meals",
+      "order": 2,
+      "name": {
+        "en": "Crispy & Fast Food Meals",
+        "ar": "وجبات الكرسبي والسناك"
+      },
+      "icon": "fa-solid fa-drumstick-bite"
+    },
+    {
+      "id": "extras",
+      "order": 3,
+      "name": {
+        "en": "Fries & Sides",
+        "ar": "بطاطا ومقبلات"
+      },
+      "icon": "fa-solid fa-fire"
+    },
+    {
+      "id": "drinks",
+      "order": 4,
+      "name": {
+        "en": "Drinks & Refreshers",
+        "ar": "مشروبات ومرطبات"
+      },
+      "icon": "fa-solid fa-glass-water"
+    }
+  ],
+  "products": [
+    {
+      "id": "al-panino-special",
+      "categoryId": "sandwiches",
+      "order": 1,
+      "name": {
+        "en": "Al Panino Special Sub",
+        "ar": "سندويش البانينو سبيسيال"
+      },
+      "price": "550,000 L.L.",
+      "description": {
+        "en": "Signature toasted panini packed with seasoned tender chicken, melted cheese, crisp pickles, and our house special sauce.",
+        "ar": "سندويش البانينو المميز المحمص، محشو بقطع الدجاج المتبلة، الجبنة الذائبة، مخلل مقرمش وصوص البانينو السري."
+      },
+      "image": "/data/layout_images/logo_pic.avif",
+      "isAvailable": true
+    },
+    {
+      "id": "tawook-panini",
+      "categoryId": "sandwiches",
+      "order": 2,
+      "name": {
+        "en": "Tawook Panini",
+        "ar": "بانينو شيش طاووق"
+      },
+      "price": "500,000 L.L.",
+      "description": {
+        "en": "Juicy marinated grilled chicken tawook with creamy garlic spread, crunchy fries, and Lebanese pickles in warm pressed bread.",
+        "ar": "قطع شيش طاووق مشوية طرية ومتبلة مع كريم الثوم اللبناني الشهي، بطاطا مقلية ومخلل بخبز البانينو المحمص."
+      },
+      "image": "/data/images/tawook.avif",
+      "isAvailable": true
+    },
+    {
+      "id": "crispy-chicken-sub",
+      "categoryId": "sandwiches",
+      "order": 3,
+      "name": {
+        "en": "Crispy Supreme Sub",
+        "ar": "صب كرسبي سوبريم"
+      },
+      "price": "500,000 L.L.",
+      "description": {
+        "en": "Ultra-crunchy golden chicken strips topped with melted cheddar, fresh iceberg lettuce, and rich cocktail sauce.",
+        "ar": "شرائح دجاج كرسبي فائقة القرمشة مع صوص الشيدر الذائب، خس مقرمش طازج وصوص الكوكتيل الغني."
+      },
+      "image": "/data/images/3-piece-crispy.avif",
+      "isAvailable": true
+    },
+    {
+      "id": "grilled-breast-sandwich",
+      "categoryId": "sandwiches",
+      "order": 4,
+      "name": {
+        "en": "Grilled Chicken Breast (Safayen)",
+        "ar": "سندويش سفاين مشوي"
+      },
+      "price": "500,000 L.L.",
+      "description": {
+        "en": "Tender grilled boneless chicken breast slices, infused with Mediterranean herbs, garlic dip, and pickles.",
+        "ar": "شرائح سفاين دجاج مشوية طازجة متبلة بالأعشاب الطبيعية، مع كريم الثوم والمخلل."
+      },
+      "image": "/data/images/grilled-chicken.avif",
+      "isAvailable": true
+    },
+    {
+      "id": "large-cut-meal",
+      "categoryId": "sandwiches",
+      "order": 5,
+      "name": {
+        "en": "Large Sliced Meal",
+        "ar": "وجبة مقطع كبير"
+      },
+      "price": "750,000 L.L.",
+      "description": {
+        "en": "Generously sliced toasted sandwich platter served with hot crispy fries, coleslaw, garlic dip, and pickles.",
+        "ar": "طبق سندويش كبير مقطع ومحمص يقدم مع بطاطا مقلية مقرمشة، سلطة كولسلو، ثوم ومخلل."
+      },
+      "image": "/data/images/tawook.avif",
+      "isAvailable": true
+    },
+    {
+      "id": "small-cut-meal",
+      "categoryId": "sandwiches",
+      "order": 6,
+      "name": {
+        "en": "Classic Sliced Meal",
+        "ar": "وجبة مقطع كلاسيك"
+      },
+      "price": "500,000 L.L.",
+      "description": {
+        "en": "Individual sliced sandwich meal accompanied by golden french fries and signature dip.",
+        "ar": "وجبة ساندويش مقطع فردية تقدم مع علبة بطاطا مقلية ذهبية وصوص الثوم الشهي."
+      },
+      "image": "/data/images/tawook.avif",
+      "isAvailable": true
+    },
+    {
+      "id": "12-piece-crispy",
+      "categoryId": "crispy-meals",
+      "order": 1,
+      "name": {
+        "en": "12-Piece Crispy Family Box",
+        "ar": "بوكس كرسبي عائلي 12 قطعة"
+      },
+      "price": "1,800,000 L.L.",
+      "description": {
+        "en": "12 pieces of jumbo hand-breaded crispy chicken strips, served with large golden fries, 2 garlic dips, coleslaw, and fresh buns.",
+        "ar": "١٢ قطعة تندرز دجاج كرسبي عملاقة ومقرمشة، تقدم مع بطاطا عائلية، ٢ صوص ثوم، كولسلو وخبز طازج."
+      },
+      "image": "/data/images/12-piece-crispy.avif",
+      "isAvailable": true
+    },
+    {
+      "id": "8-piece-crispy",
+      "categoryId": "crispy-meals",
+      "order": 2,
+      "name": {
+        "en": "8-Piece Crispy Meal",
+        "ar": "وجبة كرسبي 8 قطع"
+      },
+      "price": "1,200,000 L.L.",
+      "description": {
+        "en": "8 crunchy crispy chicken tenders, crispy golden fries, coleslaw salad, and garlic cocktail dip.",
+        "ar": "٨ قطع كرسبي مقرمشة شهية، مع بطاطا ذهبية، كولسلو، صوص كوكتيل وكريم الثوم."
+      },
+      "image": "/data/images/8-piece-crispy.avif",
+      "isAvailable": true
+    },
+    {
+      "id": "3-piece-crispy",
+      "categoryId": "crispy-meals",
+      "order": 3,
+      "name": {
+        "en": "3-Piece Crispy Snack Box",
+        "ar": "سناك كرسبي 3 قطع"
+      },
+      "price": "600,000 L.L.",
+      "description": {
+        "en": "3 pieces of crunchy crispy chicken with golden french fries and dipping sauce. Perfect quick hunger fix!",
+        "ar": "٣ قطع دجاج كرسبي مقرمش مع بطاطا مقلية وصوص مميز. وجبة خفيفة ومثالية وسريعة!"
+      },
+      "image": "/data/images/3-piece-crispy.avif",
+      "isAvailable": true
+    },
+    {
+      "id": "charcoal-chicken",
+      "categoryId": "crispy-meals",
+      "order": 4,
+      "name": {
+        "en": "Whole Charcoal Grilled Chicken",
+        "ar": "فروج فحم مشوي كامل"
+      },
+      "price": "1,400,000 L.L.",
+      "description": {
+        "en": "Whole tender chicken marinated with oriental spices, grilled over natural charcoal, served with garlic paste and pickles.",
+        "ar": "فروج كامل متبل بالخلطة اللبنانية، مشوي على الفحم الطبيعي، يقدم مع كريم الثوم، الخبز والمخلل."
+      },
+      "image": "/data/images/grilled-chicken.avif",
+      "isAvailable": true
+    },
+    {
+      "id": "half-chicken",
+      "categoryId": "crispy-meals",
+      "order": 5,
+      "name": {
+        "en": "Half Charcoal Chicken",
+        "ar": "نصف فروج فحم"
+      },
+      "price": "750,000 L.L.",
+      "description": {
+        "en": "Half a charcoal-grilled chicken with garlic sauce, fresh Lebanese bread, and crunchy pickles.",
+        "ar": "نصف فروج مشوي على الفحم يقدم طازجاً مع كريم الثوم، خبز ساخن ومخلل."
+      },
+      "image": "/data/images/grilled-chicken.avif",
+      "isAvailable": true
+    },
+    {
+      "id": "wings-meal",
+      "categoryId": "crispy-meals",
+      "order": 6,
+      "name": {
+        "en": "Crispy Wings Meal",
+        "ar": "وجبة جوانح مقرمشة"
+      },
+      "price": "750,000 L.L.",
+      "description": {
+        "en": "Succulent spiced chicken wings with your choice of garlic or spicy glaze, accompanied by french fries.",
+        "ar": "جوانح دجاج شهية متبلة ومقرمشة مع بطاطا مقلية وصوص الثوم المميز."
+      },
+      "image": "/data/images/grilled-chicken.avif",
+      "isAvailable": true
+    },
+    {
+      "id": "fries-large",
+      "categoryId": "extras",
+      "order": 1,
+      "name": {
+        "en": "Large Golden Fries",
+        "ar": "علبة بطاطا مقلية عائلية"
+      },
+      "price": "400,000 L.L.",
+      "description": {
+        "en": "A generous basket of hot, golden, crispy french fries seasoned with our house spice blend.",
+        "ar": "علبة كبيرة من البطاطا المقلية الذهبية المقرمشة والساخنة ببهارات البانينو الخاصة."
+      },
+      "image": "/data/images/large-fries.avif",
+      "isAvailable": true
+    },
+    {
+      "id": "fries-small",
+      "categoryId": "extras",
+      "order": 2,
+      "name": {
+        "en": "Classic Golden Fries",
+        "ar": "علبة بطاطا مقلية كلاسيك"
+      },
+      "price": "250,000 L.L.",
+      "description": {
+        "en": "Hot and crispy classic french fries, golden on the outside and fluffy on the inside.",
+        "ar": "علبة بطاطا مقلية فردية ساخنة ومقرمشة ومتبلة."
+      },
+      "image": "/data/images/small-fries.avif",
+      "isAvailable": true
+    },
+    {
+      "id": "pepsi",
+      "categoryId": "drinks",
+      "order": 1,
+      "name": {
+        "en": "Cold Pepsi",
+        "ar": "بيبسي مثلج"
+      },
+      "price": "100,000 L.L.",
+      "description": {
+        "en": "Chilled can of refreshing Pepsi to complement your meal.",
+        "ar": "علبة بيبسي باردة ومنعشة مع وجبتك المفضلة."
+      },
+      "image": "/data/images/pepsi.avif",
+      "isAvailable": true
+    },
+    {
+      "id": "laban",
+      "categoryId": "drinks",
+      "order": 2,
+      "name": {
+        "en": "Fresh Laban Ayran",
+        "ar": "لبن عيران بارد"
+      },
+      "price": "100,000 L.L.",
+      "description": {
+        "en": "Fresh, creamy, and chilled traditional yogurt beverage with a hint of salt.",
+        "ar": "عبوة لبن عيران طازج وبارد ومنعش بالملح الخفيف."
+      },
+      "image": "/data/images/ayran.avif",
+      "isAvailable": true
+    },
+    {
+      "id": "water",
+      "categoryId": "drinks",
+      "order": 3,
+      "name": {
+        "en": "Mineral Water",
+        "ar": "مياه معدنية نقية"
+      },
+      "price": "50,000 L.L.",
+      "description": {
+        "en": "Chilled pure natural mineral water bottle.",
+        "ar": "عبوة مياه معدنية طبيعية نقية ومثلجة."
+      },
+      "image": "/data/images/water-1.avif",
+      "isAvailable": true
+    }
+  ]
+}
