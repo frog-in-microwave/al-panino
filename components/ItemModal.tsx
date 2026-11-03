@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Language, Product } from "../types";
 import { siteText } from "../constants";
 
@@ -12,10 +12,17 @@ interface ItemModalProps {
 
 export default function ItemModal({ product, lang, onClose }: ItemModalProps) {
   const [isImgLoaded, setIsImgLoaded] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
     setIsImgLoaded(false);
   }, [product]);
+
+  useEffect(() => {
+    if (imgRef.current && imgRef.current.complete && imgRef.current.naturalWidth > 0) {
+      setIsImgLoaded(true);
+    }
+  }, [product?.image]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -66,11 +73,14 @@ export default function ItemModal({ product, lang, onClose }: ItemModalProps) {
         {product && (
           <>
             <div className={`modal-img-container ${isImgLoaded ? "loaded" : ""}`}>
-              {!isImgLoaded && <div className="card-skeleton"></div>}
+              {!isImgLoaded && <div className="chicken-loader" aria-hidden="true"></div>}
               <img
+                ref={imgRef}
                 src={product.image}
                 alt={getText(product.name)}
                 id="modal-img"
+                loading="lazy"
+                decoding="async"
                 onLoad={() => setIsImgLoaded(true)}
               />
             </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { KeyboardEvent, useState } from "react";
+import { KeyboardEvent, useState, useRef, useEffect } from "react";
 import { Product, Language } from "../types";
 
 interface FoodCardProps {
@@ -20,6 +20,14 @@ export default function FoodCard({
 }: FoodCardProps) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  // Check if image is already cached/complete on mount
+  useEffect(() => {
+    if (imgRef.current && imgRef.current.complete && imgRef.current.naturalWidth > 0) {
+      setIsLoaded(true);
+    }
+  }, [product.image]);
 
   const getText = (textObj: any) => {
     if (!textObj) return "";
@@ -48,14 +56,16 @@ export default function FoodCard({
       onClick={() => onSelect(product)}
       onKeyDown={handleKeyDown}
     >
-      {/* 1:1 Aspect Ratio Thumbnail Container */}
-      <div className={`card-img-wrapper ${isLoaded ? "is-loaded" : ""}`}>
-        {!isLoaded && <div className="card-skeleton" aria-hidden="true"></div>}
+      {/* 1:1 Aspect Ratio Thumbnail Container matching exact card height */}
+      <div className={`card-img-wrapper ${isLoaded ? "loaded" : ""}`}>
+        {!isLoaded && <div className="chicken-loader" aria-hidden="true"></div>}
 
         <img
+          ref={imgRef}
           src={hasError ? fallbackImage : product.image}
           alt={title}
           loading="lazy"
+          decoding="async"
           onLoad={() => setIsLoaded(true)}
           onError={() => {
             setHasError(true);

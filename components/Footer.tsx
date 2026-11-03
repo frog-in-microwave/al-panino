@@ -22,6 +22,7 @@ export default function Footer({ lang }: FooterProps) {
             width={160}
             height={160}
             loading="lazy"
+            decoding="async"
           />
           <h3 className="footer-brand-title">{t.restaurantName} - {t.restaurantType}</h3>
           <p className="footer-brand-tagline">{t.tagline}</p>
