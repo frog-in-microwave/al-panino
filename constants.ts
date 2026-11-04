@@ -46,9 +46,9 @@ export const branches = [
       en: "Ghazieh Branch",
       ar: "فرع الغازية",
     },
-    phone: "+96170549331",
-    phoneDisplay: "+961 70 549 331",
-    whatsapp: "+96170549331",
+    phone: "+96171254251",
+    phoneDisplay: "+961 71 254 251",
+    whatsapp: "+96171254251",
     address: {
       en: "Main Street, Ghazieh, South Lebanon",
       ar: "الشارع العام، الغازية، جنوب لبنان",
