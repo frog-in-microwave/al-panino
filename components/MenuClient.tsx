@@ -203,25 +203,13 @@ export default function MenuClient({ initialLang }: { initialLang: Language }) {
     }
   };
 
-  // Sticky detection with IntersectionObserver (with hysteresis buffer)
+  // Check initial scroll on mount
   useEffect(() => {
-    const sentinel = navSentinelRef.current;
-    if (!sentinel) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        const top = entry.boundingClientRect.top;
-        if (!isStickyRef.current && top <= 0) {
-          updateStickyState(true);
-        } else if (isStickyRef.current && top > 8) {
-          updateStickyState(false);
-        }
-      },
-      { threshold: [0, 1] }
-    );
-
-    observer.observe(sentinel);
-    return () => observer.disconnect();
+    const scrollY = window.scrollY || document.documentElement.scrollTop;
+    const isMobile = window.innerWidth < 768;
+    if (scrollY > (isMobile ? 50 : 80)) {
+      updateStickyState(true);
+    }
   }, []);
 
   // Smooth scroll to category
@@ -245,25 +233,26 @@ export default function MenuClient({ initialLang }: { initialLang: Language }) {
     }
   };
 
-  // Scroll listener for sticky active category
+  // Scroll listener for sticky collapse and active category
   useEffect(() => {
     let ticking = false;
 
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          // Keep sticky state in sync with hysteresis
-          if (navSentinelRef.current) {
-            const top = navSentinelRef.current.getBoundingClientRect().top;
-            if (!isStickyRef.current && top <= 0) {
-              updateStickyState(true);
-            } else if (isStickyRef.current && top > 8) {
-              updateStickyState(false);
-            }
+          const scrollY = window.scrollY || document.documentElement.scrollTop;
+          const isMobile = window.innerWidth < 768;
+          // Responsive upwards collapse trigger as soon as user slides/drags down past top bar
+          const collapseThreshold = isMobile ? 50 : 80;
+          const expandThreshold = 15;
+
+          if (!isStickyRef.current && scrollY > collapseThreshold) {
+            updateStickyState(true);
+          } else if (isStickyRef.current && scrollY <= expandThreshold) {
+            updateStickyState(false);
           }
 
           if (!isUserClickingNav.current) {
-            const isMobile = window.innerWidth < 768;
             const currentNavHeight = isStickyRef.current
               ? 48
               : (navRef.current?.offsetHeight || (isMobile ? 140 : 86));
