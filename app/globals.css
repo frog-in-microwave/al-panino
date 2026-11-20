@@ -241,6 +241,8 @@ html[dir="rtl"] body {
 .nav-sticky-spacer {
   width: 100%;
   pointer-events: none;
+  transition: height 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: height;
 }
 
 #category-nav {
@@ -253,7 +255,11 @@ html[dir="rtl"] body {
   padding: 8px 10px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
   border-bottom: 2px solid rgba(211, 23, 0, 0.12);
-  transition: padding 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: padding 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+              background-color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: padding, box-shadow;
 }
 
 /* Sticky / Collapsed State: when sticky ("dragged"), collapses to a slim single-row slider on mobile */
@@ -267,15 +273,16 @@ html[dir="rtl"] body {
   max-width: 960px;
   margin: 0 auto;
   width: 100%;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* 4 columns on mobile so all 8 categories fit in 2 rows, fully visible without scrolling when uncollapsed */
 .nav-blocks-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 6px;
   width: 100%;
-  transition: gap 0.2s ease;
+  transition: gap 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #category-nav.is-sticky .nav-blocks-grid {
@@ -284,6 +291,12 @@ html[dir="rtl"] body {
 
 /* Mobile Sticky Collapsed State: turns into a horizontal slider showing 4 items per view */
 @media (max-width: 767px) {
+  .nav-block {
+    flex: 0 0 calc((100% - 18px) / 4);
+    min-width: calc((100% - 18px) / 4);
+    max-width: calc((100% - 18px) / 4);
+  }
+
   #category-nav.is-sticky .nav-container {
     overflow: hidden;
   }
@@ -301,6 +314,7 @@ html[dir="rtl"] body {
     padding: 2px 0;
     width: 100%;
     scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
   }
 
   #category-nav.is-sticky .nav-blocks-grid::-webkit-scrollbar {
@@ -310,6 +324,7 @@ html[dir="rtl"] body {
   #category-nav.is-sticky .nav-block {
     flex: 0 0 calc((100% - 18px) / 4);
     min-width: calc((100% - 18px) / 4);
+    max-width: calc((100% - 18px) / 4);
     scroll-snap-align: start;
     min-height: 34px;
     padding: 4px 2px;
@@ -321,6 +336,7 @@ html[dir="rtl"] body {
 
 @media (min-width: 768px) {
   .nav-blocks-grid {
+    display: grid;
     grid-template-columns: repeat(8, 1fr);
     gap: 8px;
   }
@@ -333,12 +349,21 @@ html[dir="rtl"] body {
     gap: 6px;
     overflow-x: visible;
   }
+  .nav-block {
+    flex: initial;
+    min-width: initial;
+    max-width: initial;
+    min-height: 68px;
+    padding: 8px 6px 8px;
+    gap: 4px;
+  }
   #category-nav.is-sticky .nav-block {
     min-height: 36px;
     padding: 6px 6px;
     border-radius: 10px;
     flex: initial;
     min-width: initial;
+    max-width: initial;
   }
 }
 
@@ -357,9 +382,16 @@ html[dir="rtl"] body {
   gap: 2px;
   text-align: center;
   box-shadow: 0 1px 5px rgba(211, 23, 0, 0.06);
-  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: min-height 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+              padding 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+              border-radius 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.2s ease,
+              background-color 0.2s ease,
+              box-shadow 0.2s ease,
+              transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
   user-select: none;
   cursor: pointer;
+  will-change: min-height, padding, border-radius;
 }
 
 /* Collapsed nav block: only words, compact button height */
@@ -374,14 +406,27 @@ html[dir="rtl"] body {
 .nav-block-icon {
   width: 30px;
   height: 30px;
+  max-height: 30px;
   display: block;
   flex-shrink: 0;
-  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  opacity: 1;
+  transform: scale(1);
+  margin-bottom: 2px;
+  overflow: hidden;
+  transition: max-height 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              margin 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: max-height, opacity, transform;
 }
 
-/* Completely remove icons in sticky mode */
+/* Smooth collapse for icons in sticky mode instead of display: none */
 #category-nav.is-sticky .nav-block-icon {
-  display: none !important;
+  max-height: 0;
+  opacity: 0;
+  transform: scale(0.3);
+  margin-bottom: 0;
+  pointer-events: none;
 }
 
 .nav-block-label {
@@ -421,12 +466,24 @@ html[dir="rtl"] body {
   .nav-block-icon {
     width: 36px;
     height: 36px;
+    max-height: 36px;
   }
   .nav-block-label {
     font-size: 0.82rem;
   }
   #category-nav.is-sticky .nav-block-label {
     font-size: 0.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #category-nav,
+  .nav-container,
+  .nav-blocks-grid,
+  .nav-block,
+  .nav-block-icon,
+  .nav-sticky-spacer {
+    transition: none !important;
   }
 }
 

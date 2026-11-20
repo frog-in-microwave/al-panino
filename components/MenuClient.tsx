@@ -89,30 +89,64 @@ export default function MenuClient({ initialLang }: { initialLang: Language }) {
     return textObj[lang] || textObj.en || "";
   };
 
-  // Auto-scroll the slider to the active category (first 4 vs last 4) when collapsed on mobile
-  useEffect(() => {
-    if (!isSticky || !navScrollRef.current) return;
-
+  // Helper to shift mobile collapsed slider to show the active row (first 4 vs bottom 4)
+  const shiftSliderToActiveRow = (catId: string, smooth: boolean = true) => {
     const container = navScrollRef.current;
+    if (!container) return;
     const isMobile = window.innerWidth < 768;
     if (!isMobile) return;
 
-    const activeIdx = categories.findIndex((c) => c.id === activeCategory);
+    const activeIdx = categories.findIndex((c) => c.id === catId);
     if (activeIdx < 0) return;
 
-    if (activeIdx < 4) {
-      container.firstElementChild?.scrollIntoView({
-        behavior: "smooth",
-        inline: "start",
-        block: "nearest",
+    const isBottomRow = activeIdx >= 4;
+    const isRTL = document.documentElement.dir === "rtl";
+
+    if (!isBottomRow) {
+      container.scrollTo({
+        left: 0,
+        behavior: smooth ? "smooth" : "auto",
       });
     } else {
-      container.lastElementChild?.scrollIntoView({
-        behavior: "smooth",
-        inline: "end",
-        block: "nearest",
+      if (container.scrollWidth <= container.clientWidth) {
+        requestAnimationFrame(() => {
+          shiftSliderToActiveRow(catId, smooth);
+        });
+        return;
+      }
+
+      const child4 = container.children[4] as HTMLElement | undefined;
+      const childOffset = child4 ? child4.offsetLeft : 0;
+      const maxScroll = Math.max(0, container.scrollWidth - container.clientWidth);
+
+      let targetLeft = childOffset > 0 ? childOffset : maxScroll;
+      if (isRTL) {
+        targetLeft = -maxScroll;
+      }
+
+      container.scrollTo({
+        left: targetLeft,
+        behavior: smooth ? "smooth" : "auto",
       });
+
+      if (isRTL && container.scrollLeft === 0 && maxScroll > 0) {
+        container.scrollTo({
+          left: maxScroll,
+          behavior: smooth ? "smooth" : "auto",
+        });
+      }
     }
+  };
+
+  // Auto-scroll the slider to the active category row (first 4 vs bottom 4) when collapsed on mobile
+  useEffect(() => {
+    if (!isSticky || !navScrollRef.current) return;
+
+    const rafId = requestAnimationFrame(() => {
+      shiftSliderToActiveRow(activeCategory, true);
+    });
+
+    return () => cancelAnimationFrame(rafId);
   }, [activeCategory, isSticky, categories]);
 
   // Measure uncollapsed height on mount and resize
@@ -150,10 +184,13 @@ export default function MenuClient({ initialLang }: { initialLang: Language }) {
         }
         const uncollapsedH = uncollapsedHeightRef.current || (isMobile ? 140 : 86);
         setSpacerHeight(Math.max(0, uncollapsedH - collapsedH));
+        requestAnimationFrame(() => {
+          shiftSliderToActiveRow(activeCategory, true);
+        });
       } else {
         setSpacerHeight(0);
         if (navScrollRef.current) {
-          navScrollRef.current.scrollLeft = 0;
+          navScrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
         }
         requestAnimationFrame(() => {
           if (navRef.current && !isStickyRef.current) {
@@ -166,17 +203,21 @@ export default function MenuClient({ initialLang }: { initialLang: Language }) {
     }
   };
 
-  // Sticky detection with IntersectionObserver
+  // Sticky detection with IntersectionObserver (with hysteresis buffer)
   useEffect(() => {
     const sentinel = navSentinelRef.current;
     if (!sentinel) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        const isStuck = !entry.isIntersecting && entry.boundingClientRect.top <= 0;
-        updateStickyState(isStuck);
+        const top = entry.boundingClientRect.top;
+        if (!isStickyRef.current && top <= 0) {
+          updateStickyState(true);
+        } else if (isStickyRef.current && top > 8) {
+          updateStickyState(false);
+        }
       },
-      { threshold: 0 }
+      { threshold: [0, 1] }
     );
 
     observer.observe(sentinel);
@@ -188,6 +229,7 @@ export default function MenuClient({ initialLang }: { initialLang: Language }) {
     e.preventDefault();
     setActiveCategory(id);
     isUserClickingNav.current = true;
+    shiftSliderToActiveRow(id, true);
 
     const el = document.getElementById(id);
     if (el) {
@@ -210,10 +252,14 @@ export default function MenuClient({ initialLang }: { initialLang: Language }) {
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          // Keep sticky state in sync
+          // Keep sticky state in sync with hysteresis
           if (navSentinelRef.current) {
-            const isStuck = navSentinelRef.current.getBoundingClientRect().top <= 0;
-            updateStickyState(isStuck);
+            const top = navSentinelRef.current.getBoundingClientRect().top;
+            if (!isStickyRef.current && top <= 0) {
+              updateStickyState(true);
+            } else if (isStickyRef.current && top > 8) {
+              updateStickyState(false);
+            }
           }
 
           if (!isUserClickingNav.current) {
@@ -257,15 +303,6 @@ export default function MenuClient({ initialLang }: { initialLang: Language }) {
       {/* Sticky detection sentinel */}
       <div ref={navSentinelRef} className="nav-sticky-sentinel" aria-hidden="true" />
 
-      {/* Spacer to prevent layout shift when nav collapses */}
-      {isSticky && (
-        <div
-          className="nav-sticky-spacer"
-          style={{ height: `${spacerHeight}px` }}
-          aria-hidden="true"
-        />
-      )}
-
       {/* 2. Category Block Navigation (turns into horizontal slider when collapsed on mobile) */}
       <nav
         id="category-nav"
@@ -295,6 +332,13 @@ export default function MenuClient({ initialLang }: { initialLang: Language }) {
           </div>
         </div>
       </nav>
+
+      {/* Spacer placed AFTER nav to prevent layout shift without displacing sticky nav */}
+      <div
+        className="nav-sticky-spacer"
+        style={{ height: isSticky ? `${spacerHeight}px` : "0px" }}
+        aria-hidden="true"
+      />
 
       {/* 3. Main Menu Content */}
       <main id="menu-container">
