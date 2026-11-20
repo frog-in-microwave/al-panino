@@ -1,0 +1,79 @@
+[
+  {
+    "id": "all",
+    "name": "All Items",
+    "nameAr": "جميع الأصناف",
+    "color": "#64748b",
+    "icon": "layers"
+  },
+  {
+    "id": "appetizers",
+    "name": "Appetizers",
+    "nameAr": "مقبلات",
+    "color": "#ea580c",
+    "icon": "utensils"
+  },
+  {
+    "id": "salads",
+    "name": "Salads",
+    "nameAr": "سلطات",
+    "color": "#16a34a",
+    "icon": "salad"
+  },
+  {
+    "id": "wraps",
+    "name": "Wraps",
+    "nameAr": "راب",
+    "color": "#0891b2",
+    "icon": "wrap"
+  },
+  {
+    "id": "sandwiches",
+    "name": "Sandwiches",
+    "nameAr": "سندويشات",
+    "color": "#d97706",
+    "icon": "sandwich"
+  },
+  {
+    "id": "ciabata",
+    "name": "Ciabata",
+    "nameAr": "تشاباتا",
+    "color": "#ca8a04",
+    "icon": "bread"
+  },
+  {
+    "id": "beef-burger",
+    "name": "Beef Burger",
+    "nameAr": "برغر لحم",
+    "color": "#dc2626",
+    "icon": "burger"
+  },
+  {
+    "id": "chicken-burger",
+    "name": "Chicken Burger",
+    "nameAr": "برغر دجاج",
+    "color": "#f97316",
+    "icon": "burger"
+  },
+  {
+    "id": "plates",
+    "name": "Plates",
+    "nameAr": "صحون",
+    "color": "#7c3aed",
+    "icon": "utensils"
+  },
+  {
+    "id": "drinks",
+    "name": "Drinks & Beverages",
+    "nameAr": "مشروبات باردة",
+    "color": "#0284c7",
+    "icon": "cup"
+  },
+  {
+    "id": "human-parts",
+    "name": "human parts",
+    "nameAr": "البي",
+    "color": "#bd0db9",
+    "icon": "tag"
+  }
+]

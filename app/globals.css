@@ -230,85 +230,292 @@ html[dir="rtl"] body {
   box-shadow: 0 6px 16px rgba(37, 211, 102, 0.42);
 }
 
-/* ================= STICKY CATEGORY NAV (IN SAME PLACE) ================= */
+/* ================= CATEGORY NAV BLOCKS (NON-SCROLLABLE) ================= */
+.nav-sticky-sentinel {
+  height: 1px;
+  margin-bottom: -1px;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.nav-sticky-spacer {
+  width: 100%;
+  pointer-events: none;
+}
+
 #category-nav {
   position: sticky;
   top: 0;
-  background: rgba(255, 255, 255, 0.94); /* Clean frosted white navigation */
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   z-index: 100;
-  padding: 10px 0;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-  border-bottom: 2px solid rgba(211, 23, 0, 0.12); /* Subtle red accent underline */
-  transition: all 0.2s ease;
+  padding: 8px 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  border-bottom: 2px solid rgba(211, 23, 0, 0.12);
+  transition: padding 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* Sticky / Collapsed State: when sticky ("dragged"), collapses to a slim single-row slider on mobile */
+#category-nav.is-sticky {
+  padding: 5px 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.09);
+  border-bottom: 2px solid rgba(211, 23, 0, 0.16);
 }
 
 .nav-container {
   max-width: 960px;
   margin: 0 auto;
+  width: 100%;
 }
 
-/* Horizontal Category Pills Carousel */
-.nav-scroll-wrapper {
-  display: flex;
-  overflow-x: auto;
-  white-space: nowrap;
-  padding: 4px 16px;
-  gap: 10px;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
+/* 4 columns on mobile so all 8 categories fit in 2 rows, fully visible without scrolling when uncollapsed */
+.nav-blocks-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  width: 100%;
+  transition: gap 0.2s ease;
 }
 
-.nav-scroll-wrapper::-webkit-scrollbar {
-  display: none;
+#category-nav.is-sticky .nav-blocks-grid {
+  gap: 6px;
 }
 
-.nav-pill {
+/* Mobile Sticky Collapsed State: turns into a horizontal slider showing 4 items per view */
+@media (max-width: 767px) {
+  #category-nav.is-sticky .nav-container {
+    overflow: hidden;
+  }
+
+  #category-nav.is-sticky .nav-blocks-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 6px;
+    padding: 2px 0;
+    width: 100%;
+    scroll-snap-type: x mandatory;
+  }
+
+  #category-nav.is-sticky .nav-blocks-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  #category-nav.is-sticky .nav-block {
+    flex: 0 0 calc((100% - 18px) / 4);
+    min-width: calc((100% - 18px) / 4);
+    scroll-snap-align: start;
+    min-height: 34px;
+    padding: 4px 2px;
+    border-radius: 9px;
+    gap: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-blocks-grid {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 8px;
+  }
+  #category-nav.is-sticky {
+    padding: 6px 12px;
+  }
+  #category-nav.is-sticky .nav-blocks-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 6px;
+    overflow-x: visible;
+  }
+  #category-nav.is-sticky .nav-block {
+    min-height: 36px;
+    padding: 6px 6px;
+    border-radius: 10px;
+    flex: initial;
+    min-width: initial;
+  }
+}
+
+.nav-block {
   text-decoration: none;
   color: var(--text-secondary);
-  font-weight: 800;
-  font-size: 0.85rem;
-  padding: 0 16px;
-  min-height: 42px;
-  display: inline-flex;
+  background: #ffffff;
+  border: 1.5px solid rgba(211, 23, 0, 0.28);
+  border-radius: 14px;
+  padding: 6px 3px 6px;
+  min-height: 58px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  background: #ffffff;
-  border-radius: var(--radius-full);
-  border: 1.5px solid rgba(0, 0, 0, 0.08);
-  box-shadow: var(--shadow-sm);
-  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-  flex-shrink: 0;
+  gap: 2px;
+  text-align: center;
+  box-shadow: 0 1px 5px rgba(211, 23, 0, 0.06);
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
   user-select: none;
+  cursor: pointer;
 }
 
-.nav-pill-icon {
-  font-size: 0.92rem;
-  color: var(--brand-red);
+/* Collapsed nav block: only words, compact button height */
+#category-nav.is-sticky .nav-block {
+  min-height: 34px;
+  padding: 4px 2px;
+  border-radius: 9px;
+  gap: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
-.nav-pill:hover {
-  color: var(--brand-red);
+.nav-block-icon {
+  width: 30px;
+  height: 30px;
+  display: block;
+  flex-shrink: 0;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Completely remove icons in sticky mode */
+#category-nav.is-sticky .nav-block-icon {
+  display: none !important;
+}
+
+.nav-block-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--text-secondary);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  transition: color 0.2s ease;
+}
+
+#category-nav.is-sticky .nav-block-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+@media (min-width: 768px) {
+  #category-nav.is-sticky {
+    padding: 6px 12px;
+  }
+  .nav-block {
+    min-height: 68px;
+    padding: 8px 6px 8px;
+    gap: 4px;
+  }
+  #category-nav.is-sticky .nav-block {
+    min-height: 36px;
+    padding: 6px 6px;
+    border-radius: 10px;
+  }
+  .nav-block-icon {
+    width: 36px;
+    height: 36px;
+  }
+  .nav-block-label {
+    font-size: 0.82rem;
+  }
+  #category-nav.is-sticky .nav-block-label {
+    font-size: 0.8rem;
+  }
+}
+
+.nav-block:hover {
   border-color: var(--brand-red);
   transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(211, 23, 0, 0.16);
 }
 
-.nav-pill:active {
+#category-nav.is-sticky .nav-block:hover {
+  transform: translateY(-1px);
+}
+
+.nav-block:hover .nav-block-icon {
+  transform: scale(1.1);
+}
+
+.nav-block:active {
   transform: scale(0.96);
 }
 
-.nav-pill.active {
-  background: var(--brand-red);
-  color: var(--text-white);
+/* Active State: Clean warm highlight card where colorful food SVGs look delicious */
+.nav-block.active {
+  background: #fff8f2;
   border-color: var(--brand-red);
-  box-shadow: 0 6px 18px var(--brand-red-glow);
-  transform: translateY(-2px) scale(1.02);
+  border-width: 2px;
+  box-shadow: 0 4px 16px var(--brand-red-glow);
+  transform: translateY(-2px);
 }
 
-.nav-pill.active .nav-pill-icon {
-  color: #ffffff;
+#category-nav.is-sticky .nav-block.active {
+  box-shadow: 0 2px 10px var(--brand-red-glow);
+  transform: translateY(-1px);
+}
+
+.nav-block.active .nav-block-label {
+  color: var(--brand-red);
+  font-weight: 900;
+}
+
+.nav-block.active .nav-block-icon {
+  transform: scale(1.08);
+}
+
+/* ================= EMPTY CATEGORY CARD ================= */
+.empty-category-card {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  border: 1.5px dashed rgba(211, 23, 0, 0.22);
+  padding: 2.25rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: var(--shadow-sm);
+  margin-top: 0.5rem;
+}
+
+.empty-category-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid rgba(211, 23, 0, 0.18);
+  box-shadow: 0 4px 16px rgba(211, 23, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.empty-category-icon svg {
+  width: 46px;
+  height: 46px;
+}
+
+.empty-category-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.empty-category-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  max-width: 380px;
+  line-height: 1.45;
 }
 
 /* ================= MAIN MENU CONTAINER ================= */
@@ -321,8 +528,14 @@ html[dir="rtl"] body {
 
 /* Category Sections */
 .category-section {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 58px;
   margin-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .category-section {
+    scroll-margin-top: 64px;
+  }
 }
 
 .category-section-header {
@@ -341,17 +554,21 @@ html[dir="rtl"] body {
 }
 
 .category-header-icon {
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   border-radius: 12px;
   background: #ffffff;
-  color: var(--brand-red);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
-  border: 1.5px solid rgba(211, 23, 0, 0.12);
-  box-shadow: 0 2px 8px rgba(211, 23, 0, 0.06);
+  border: 1.5px solid rgba(211, 23, 0, 0.16);
+  box-shadow: 0 2px 8px rgba(211, 23, 0, 0.08);
+  flex-shrink: 0;
+}
+
+.category-header-icon svg {
+  width: 32px;
+  height: 32px;
 }
 
 .category-heading {

@@ -1,0 +1,15 @@
+{
+  "orderNumber": 1002,
+  "orderType": "Takeaway",
+  "items": [
+    {
+      "name": "Chicken Burger",
+      "nameAr": "???? ????",
+      "price": 500000,
+      "quantity": 1,
+      "lineTotal": 500000
+    }
+  ],
+  "total": 500000,
+  "totalUsd": "5.56"
+}

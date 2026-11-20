@@ -1,0 +1,74 @@
+[
+  {
+    "id": "appetizers",
+    "order": 1,
+    "name": {
+      "en": "Appetizers",
+      "ar": "مقبلات"
+    },
+    "icon": "appetizers"
+  },
+  {
+    "id": "salads",
+    "order": 2,
+    "name": {
+      "en": "Salads",
+      "ar": "سلطات"
+    },
+    "icon": "salads"
+  },
+  {
+    "id": "wraps",
+    "order": 3,
+    "name": {
+      "en": "Wraps",
+      "ar": "راب"
+    },
+    "icon": "wraps"
+  },
+  {
+    "id": "sandwiches",
+    "order": 4,
+    "name": {
+      "en": "Sandwiches",
+      "ar": "سندويشات"
+    },
+    "icon": "sandwiches"
+  },
+  {
+    "id": "ciabata",
+    "order": 5,
+    "name": {
+      "en": "Ciabata",
+      "ar": "تشاباتا"
+    },
+    "icon": "ciabata"
+  },
+  {
+    "id": "beef-burger",
+    "order": 6,
+    "name": {
+      "en": "Beef Burger",
+      "ar": "برغر لحم"
+    },
+    "icon": "beef-burger"
+  },
+  {
+    "id": "chicken-burger",
+    "order": 7,
+    "name": {
+      "en": "Chicken Burger",
+      "ar": "برغر دجاج"
+    },
+    "icon": "chicken-burger"
+  },
+  {
+    "id": "plates",
+    "order": 8,
+    "name": {
+      "en": "Plates",
+      "ar": "صحون"
+    },
+    "icon": "plates"
+  }
+]

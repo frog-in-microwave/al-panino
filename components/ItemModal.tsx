@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import { Language, Product } from "../types";
-import { siteText } from "../constants";
+import { siteText, FALLBACK_IMAGE } from "../constants";
 
 interface ItemModalProps {
   product: Product | null;
@@ -12,10 +12,12 @@ interface ItemModalProps {
 
 export default function ItemModal({ product, lang, onClose }: ItemModalProps) {
   const [isImgLoaded, setIsImgLoaded] = useState(false);
+  const [hasImgError, setHasImgError] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
     setIsImgLoaded(false);
+    setHasImgError(false);
   }, [product]);
 
   useEffect(() => {
@@ -76,12 +78,16 @@ export default function ItemModal({ product, lang, onClose }: ItemModalProps) {
               {!isImgLoaded && <div className="chicken-loader" aria-hidden="true"></div>}
               <img
                 ref={imgRef}
-                src={product.image}
+                src={hasImgError ? FALLBACK_IMAGE : product.image}
                 alt={getText(product.name)}
                 id="modal-img"
                 loading="lazy"
                 decoding="async"
                 onLoad={() => setIsImgLoaded(true)}
+                onError={() => {
+                  setHasImgError(true);
+                  setIsImgLoaded(true);
+                }}
               />
             </div>
             <div className="modal-text">

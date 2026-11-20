@@ -1,0 +1,488 @@
+[
+  {
+    "orderNumber": 1018,
+    "orderType": "Takeaway",
+    "customerNote": "",
+    "items": [
+      {
+        "id": "mozzarella-sticks",
+        "name": "Mozzarella Sticks (5 pcs)",
+        "nameAr": "أصابع جبنة موزاريلا (٥ قطع)",
+        "price": 350000,
+        "quantity": 1,
+        "lineTotal": 350000,
+        "note": ""
+      }
+    ],
+    "subtotal": 350000,
+    "total": 350000,
+    "totalUsd": "3.89",
+    "paymentMethod": "cash",
+    "tendered": 350000,
+    "tenderedUsd": "3.89",
+    "change": 0,
+    "changeUsd": "0.00",
+    "timestamp": "2026-11-20T00:22:11.667Z",
+    "id": "AP-131667"
+  },
+  {
+    "orderNumber": 1017,
+    "orderType": "Takeaway",
+    "customerNote": "",
+    "items": [
+      {
+        "id": "onion-rings",
+        "name": "Onion Rings (10 pcs)",
+        "nameAr": "حلقات بصل مقرمشة (١٠ قطع)",
+        "price": 300000,
+        "quantity": 1,
+        "lineTotal": 300000,
+        "note": ""
+      }
+    ],
+    "subtotal": 300000,
+    "total": 300000,
+    "totalUsd": "3.33",
+    "paymentMethod": "cash",
+    "tendered": 300000,
+    "tenderedUsd": "3.33",
+    "change": 0,
+    "changeUsd": "0.00",
+    "timestamp": "2026-11-20T00:10:01.476Z",
+    "id": "AP-401476"
+  },
+  {
+    "orderNumber": 1016,
+    "orderType": "Takeaway",
+    "customerNote": "",
+    "items": [
+      {
+        "id": "mozzarella-sticks",
+        "name": "Mozzarella Sticks (5 pcs)",
+        "nameAr": "أصابع جبنة موزاريلا (٥ قطع)",
+        "price": 350000,
+        "quantity": 1,
+        "lineTotal": 350000,
+        "note": ""
+      }
+    ],
+    "subtotal": 350000,
+    "total": 350000,
+    "totalUsd": "3.89",
+    "paymentMethod": "cash",
+    "tendered": 450000,
+    "tenderedUsd": "5.00",
+    "change": 100000,
+    "changeUsd": "1.11",
+    "timestamp": "2026-11-19T23:43:07.284Z",
+    "id": "AP-787284"
+  },
+  {
+    "orderNumber": 1015,
+    "orderType": "Takeaway",
+    "customerNote": "",
+    "items": [
+      {
+        "id": "onion-rings",
+        "name": "Onion Rings (10 pcs)",
+        "nameAr": "حلقات بصل مقرمشة (١٠ قطع)",
+        "price": 300000,
+        "quantity": 1,
+        "lineTotal": 300000,
+        "note": ""
+      }
+    ],
+    "subtotal": 300000,
+    "total": 300000,
+    "totalUsd": "3.33",
+    "paymentMethod": "cash",
+    "tendered": 450000,
+    "tenderedUsd": "5.00",
+    "change": 150000,
+    "changeUsd": "1.67",
+    "timestamp": "2026-11-19T23:40:51.396Z",
+    "id": "AP-651396"
+  },
+  {
+    "orderNumber": 1014,
+    "orderType": "Takeaway",
+    "customerNote": "",
+    "items": [
+      {
+        "id": "mozzarella-sticks",
+        "name": "Mozzarella Sticks (5 pcs)",
+        "nameAr": "أصابع جبنة موزاريلا (٥ قطع)",
+        "price": 350000,
+        "quantity": 1,
+        "lineTotal": 350000,
+        "note": ""
+      }
+    ],
+    "subtotal": 350000,
+    "total": 350000,
+    "totalUsd": "3.89",
+    "paymentMethod": "cash",
+    "tendered": 450000,
+    "tenderedUsd": "5.00",
+    "change": 100000,
+    "changeUsd": "1.11",
+    "timestamp": "2026-11-19T23:33:04.172Z",
+    "id": "AP-184172"
+  },
+  {
+    "orderNumber": 1013,
+    "orderType": "Takeaway",
+    "customerNote": "",
+    "items": [
+      {
+        "id": "mozzarella-sticks",
+        "name": "Mozzarella Sticks (5 pcs)",
+        "nameAr": "أصابع جبنة موزاريلا (٥ قطع)",
+        "price": 350000,
+        "quantity": 1,
+        "lineTotal": 350000,
+        "note": ""
+      }
+    ],
+    "subtotal": 350000,
+    "total": 350000,
+    "totalUsd": "3.89",
+    "paymentMethod": "cash",
+    "tendered": 450000,
+    "tenderedUsd": "5.00",
+    "change": 100000,
+    "changeUsd": "1.11",
+    "timestamp": "2026-11-19T23:32:15.278Z",
+    "id": "AP-135278"
+  },
+  {
+    "orderNumber": 1012,
+    "orderType": "Takeaway",
+    "customerNote": "",
+    "items": [
+      {
+        "id": "mozzarella-sticks",
+        "name": "Mozzarella Sticks (5 pcs)",
+        "nameAr": "أصابع جبنة موزاريلا (٥ قطع)",
+        "price": 350000,
+        "quantity": 1,
+        "lineTotal": 350000,
+        "note": ""
+      }
+    ],
+    "subtotal": 350000,
+    "total": 350000,
+    "totalUsd": "3.89",
+    "paymentMethod": "cash",
+    "tendered": 350000,
+    "tenderedUsd": "3.89",
+    "change": 0,
+    "changeUsd": "0.00",
+    "timestamp": "2026-11-19T23:24:24.534Z",
+    "id": "AP-664534"
+  },
+  {
+    "orderNumber": 1011,
+    "orderType": "Takeaway",
+    "customerNote": "",
+    "items": [
+      {
+        "id": "mozzarella-sticks",
+        "name": "Mozzarella Sticks (5 pcs)",
+        "nameAr": "أصابع جبنة موزاريلا (٥ قطع)",
+        "price": 350000,
+        "quantity": 2,
+        "lineTotal": 700000,
+        "note": ""
+      }
+    ],
+    "subtotal": 700000,
+    "total": 700000,
+    "totalUsd": "7.78",
+    "paymentMethod": "cash",
+    "tendered": 700000,
+    "tenderedUsd": "7.78",
+    "change": 0,
+    "changeUsd": "0.00",
+    "timestamp": "2026-11-19T23:14:33.076Z",
+    "id": "AP-073076"
+  },
+  {
+    "orderNumber": 1010,
+    "orderType": "Takeaway",
+    "customerNote": "",
+    "items": [
+      {
+        "id": "mozzarella-sticks",
+        "name": "Mozzarella Sticks (5 pcs)",
+        "nameAr": "أصابع جبنة موزاريلا (٥ قطع)",
+        "price": 350000,
+        "quantity": 1,
+        "lineTotal": 350000,
+        "note": ""
+      },
+      {
+        "id": "onion-rings",
+        "name": "Onion Rings (10 pcs)",
+        "nameAr": "حلقات بصل مقرمشة (١٠ قطع)",
+        "price": 300000,
+        "quantity": 1,
+        "lineTotal": 300000,
+        "note": ""
+      }
+    ],
+    "subtotal": 650000,
+    "total": 650000,
+    "totalUsd": "7.22",
+    "paymentMethod": "cash",
+    "tendered": 650000,
+    "tenderedUsd": "7.22",
+    "change": 0,
+    "changeUsd": "0.00",
+    "timestamp": "2026-11-19T22:39:59.848Z",
+    "id": "AP-999848"
+  },
+  {
+    "orderNumber": 1009,
+    "orderType": "Takeaway",
+    "customerNote": "",
+    "items": [
+      {
+        "id": "al-panino-special",
+        "name": "Al Panino Special Sub",
+        "nameAr": "سندويش البانينو سبيسيال",
+        "price": 550000,
+        "quantity": 1,
+        "lineTotal": 550000,
+        "note": ""
+      },
+      {
+        "id": "tawook-panini",
+        "name": "Tawook Panini",
+        "nameAr": "بانينو شيش طاووق",
+        "price": 500000,
+        "quantity": 3,
+        "lineTotal": 1500000,
+        "note": ""
+      }
+    ],
+    "subtotal": 2050000,
+    "total": 2050000,
+    "totalUsd": "22.78",
+    "paymentMethod": "cash",
+    "tendered": 2250000,
+    "tenderedUsd": "25.00",
+    "change": 200000,
+    "changeUsd": "2.22",
+    "timestamp": "2026-11-18T20:24:42.486Z",
+    "id": "AP-482486"
+  },
+  {
+    "orderNumber": 1008,
+    "orderType": "Takeaway",
+    "customerNote": "",
+    "items": [
+      {
+        "id": "crispy-supreme-sub",
+        "name": "Crispy Supreme Sub",
+        "nameAr": "صب كرسبي سوبريم",
+        "price": 520000,
+        "quantity": 1,
+        "lineTotal": 520000,
+        "note": ""
+      }
+    ],
+    "subtotal": 520000,
+    "total": 520000,
+    "totalUsd": "5.78",
+    "paymentMethod": "cash",
+    "tendered": 520000,
+    "tenderedUsd": "5.78",
+    "change": 0,
+    "changeUsd": "0.00",
+    "timestamp": "2026-11-18T09:03:10.272Z",
+    "id": "AP-590267"
+  },
+  {
+    "orderNumber": 1007,
+    "orderType": "Dine-In",
+    "customerNote": "",
+    "items": [
+      {
+        "id": "crispy-supreme-sub",
+        "name": "Crispy Supreme Sub",
+        "nameAr": "صب كرسبي سوبريم",
+        "price": 520000,
+        "quantity": 1,
+        "lineTotal": 520000,
+        "note": ""
+      }
+    ],
+    "subtotal": 520000,
+    "total": 520000,
+    "totalUsd": "5.81",
+    "paymentMethod": "cash",
+    "tendered": 520000,
+    "change": 0,
+    "timestamp": "2026-11-17T22:42:31.182Z",
+    "id": "AP-351182"
+  },
+  {
+    "orderNumber": 1006,
+    "orderType": "Takeaway",
+    "customerNote": "",
+    "items": [
+      {
+        "id": "crispy-supreme-sub",
+        "name": "Crispy Supreme Sub",
+        "nameAr": "صب كرسبي سوبريم",
+        "price": 520000,
+        "quantity": 1,
+        "lineTotal": 520000,
+        "note": ""
+      }
+    ],
+    "subtotal": 520000,
+    "total": 520000,
+    "totalUsd": "5.81",
+    "paymentMethod": "cash",
+    "tendered": 520000,
+    "change": 0,
+    "timestamp": "2026-11-17T22:40:37.046Z",
+    "id": "AP-237045"
+  },
+  {
+    "orderNumber": 1005,
+    "orderType": "Takeaway",
+    "customerNote": "",
+    "items": [
+      {
+        "id": "crispy-supreme-sub",
+        "name": "Crispy Supreme Sub",
+        "nameAr": "صب كرسبي سوبريم",
+        "price": 520000,
+        "quantity": 1,
+        "lineTotal": 520000,
+        "note": ""
+      }
+    ],
+    "subtotal": 520000,
+    "total": 520000,
+    "totalUsd": "5.81",
+    "paymentMethod": "cash",
+    "tendered": 520000,
+    "change": 0,
+    "timestamp": "2026-11-17T21:16:12.894Z",
+    "id": "AP-172894"
+  },
+  {
+    "orderNumber": 1004,
+    "orderType": "Takeaway",
+    "customerNote": "",
+    "items": [
+      {
+        "id": "crispy-supreme-sub",
+        "name": "Crispy Supreme Sub",
+        "nameAr": "صب كرسبي سوبريم",
+        "price": 520000,
+        "quantity": 1,
+        "lineTotal": 520000,
+        "note": ""
+      }
+    ],
+    "subtotal": 520000,
+    "total": 520000,
+    "totalUsd": "5.81",
+    "paymentMethod": "cash",
+    "tendered": 520000,
+    "change": 0,
+    "timestamp": "2026-11-17T20:50:09.725Z",
+    "id": "AP-609725"
+  },
+  {
+    "orderNumber": 1003,
+    "orderType": "Takeaway",
+    "customerNote": "",
+    "items": [
+      {
+        "id": "crispy-supreme-sub",
+        "name": "Crispy Supreme Sub",
+        "nameAr": "صب كرسبي سوبريم",
+        "price": 520000,
+        "quantity": 1,
+        "lineTotal": 520000,
+        "note": ""
+      }
+    ],
+    "subtotal": 520000,
+    "total": 520000,
+    "totalUsd": "5.81",
+    "paymentMethod": "cash",
+    "tendered": 520000,
+    "change": 0,
+    "timestamp": "2026-11-17T20:48:58.526Z",
+    "id": "AP-538526"
+  },
+  {
+    "orderNumber": 1002,
+    "orderType": "Takeaway",
+    "customerNote": "",
+    "items": [
+      {
+        "id": "tawook-panini",
+        "name": "Tawook Panini",
+        "nameAr": "بانينو شيش طاووق",
+        "price": 500000,
+        "quantity": 1,
+        "lineTotal": 500000,
+        "note": ""
+      }
+    ],
+    "subtotal": 500000,
+    "total": 500000,
+    "totalUsd": "5.59",
+    "paymentMethod": "cash",
+    "tendered": 500000,
+    "change": 0,
+    "timestamp": "2026-11-17T20:25:54.703Z",
+    "id": "AP-154703"
+  },
+  {
+    "orderNumber": 1001,
+    "orderType": "Takeaway",
+    "customerNote": "",
+    "items": [
+      {
+        "id": "grilled-chicken-breast",
+        "name": "Grilled Chicken Breast (Safayen)",
+        "nameAr": "سندويش سفاين مشوي",
+        "price": 500000,
+        "quantity": 1,
+        "lineTotal": 500000,
+        "note": ""
+      },
+      {
+        "id": "tawook-panini",
+        "name": "Tawook Panini",
+        "nameAr": "بانينو شيش طاووق",
+        "price": 500000,
+        "quantity": 1,
+        "lineTotal": 500000,
+        "note": ""
+      }
+    ],
+    "subtotal": 1000000,
+    "discountPercent": 0,
+    "discountAmount": 0,
+    "taxEnabled": false,
+    "taxAmount": 0,
+    "total": 1000000,
+    "totalUsd": "11.17",
+    "paymentMethod": "cash",
+    "tendered": 1000000,
+    "change": 0,
+    "cashier": "Cashier 1",
+    "timestamp": "2026-11-17T20:09:32.038Z",
+    "id": "AP-172038"
+  }
+]

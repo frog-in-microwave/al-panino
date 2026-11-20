@@ -1,0 +1,994 @@
+[
+  {
+    "id": "mozzarella-sticks",
+    "categoryId": "appetizers",
+    "order": 1,
+    "name": {
+      "en": "Mozzarella Sticks (5 pcs)",
+      "ar": "أصابع جبنة موزاريلا (٥ قطع)"
+    },
+    "price": "350,000 L.L.",
+    "description": {
+      "en": "5 pieces of crispy golden breaded mozzarella sticks served hot with cocktail sauce.",
+      "ar": "٥ أصابع من جبنة الموزاريلا المقلية المقرمشة والذهبية تقدم ساخنة مع صوص الكوكتيل."
+    },
+    "image": "/data/images/mozzarella-sticks.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "onion-rings",
+    "categoryId": "appetizers",
+    "order": 2,
+    "name": {
+      "en": "Onion Rings (10 pcs)",
+      "ar": "حلقات بصل مقرمشة (١٠ قطع)"
+    },
+    "price": "300,000 L.L.",
+    "description": {
+      "en": "10 pieces of golden crunchy battered onion rings served with cocktail sauce.",
+      "ar": "١٠ حلقات من البصل المقرمش المغطى بالخلطة الذهبية اللذيذة يقدم مع صوص الكوكتيل."
+    },
+    "image": "/data/images/onion-rings.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "fries-regular",
+    "categoryId": "appetizers",
+    "order": 3,
+    "name": {
+      "en": "French Fries (Medium)",
+      "ar": "بطاطا مقلية (وسط)"
+    },
+    "price": "300,000 L.L.",
+    "description": {
+      "en": "Crispy hot golden salted french fries (medium portion).",
+      "ar": "علبة بطاطا مقلية مقرمشة وذهبية طازجة (حجم وسط)."
+    },
+    "image": "/data/images/fries-regular.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "fries-large",
+    "categoryId": "appetizers",
+    "order": 4,
+    "name": {
+      "en": "French Fries (Large)",
+      "ar": "بطاطا مقلية (كبير)"
+    },
+    "price": "500,000 L.L.",
+    "description": {
+      "en": "Generous serving of crispy hot golden french fries (large portion).",
+      "ar": "علبة بطاطا مقلية مقرمشة وذهبية كبيرة الحجم ومتبلة."
+    },
+    "image": "/data/images/fries-large.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "wedges-regular",
+    "categoryId": "appetizers",
+    "order": 5,
+    "name": {
+      "en": "Potato Wedges (Medium)",
+      "ar": "بطاطا ودجز (وسط)"
+    },
+    "price": "300,000 L.L.",
+    "description": {
+      "en": "Thick seasoned rustic potato wedges served with cocktail sauce (medium).",
+      "ar": "أجنحة بطاطا ودجز محمرة ومتبلة بالأعشاب تقدم مع صوص الكوكتيل (حجم وسط)."
+    },
+    "image": "/data/images/wedges-regular.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "wedges-large",
+    "categoryId": "appetizers",
+    "order": 6,
+    "name": {
+      "en": "Potato Wedges (Large)",
+      "ar": "بطاطا ودجز (كبير)"
+    },
+    "price": "500,000 L.L.",
+    "description": {
+      "en": "Large portion of seasoned golden potato wedges served with cocktail sauce.",
+      "ar": "حجم كبير من أجنحة البطاطا الودجز المقرمشة مع صوص الكوكتيل الشهي."
+    },
+    "image": "/data/images/wedges-large.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "curly-fries-regular",
+    "categoryId": "appetizers",
+    "order": 7,
+    "name": {
+      "en": "Curly Fries (Medium)",
+      "ar": "بطاطا كيرلي (وسط)"
+    },
+    "price": "360,000 L.L.",
+    "description": {
+      "en": "Fun spiral seasoned curly fries served with melted cheddar sauce (medium).",
+      "ar": "بطاطا حلزونية متبلة ومقرمشة تقدم مع صوص الشيدر الذائب (حجم وسط)."
+    },
+    "image": "/data/images/curly-fries-regular.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "curly-fries-large",
+    "categoryId": "appetizers",
+    "order": 8,
+    "name": {
+      "en": "Curly Fries (Large)",
+      "ar": "بطاطا كيرلي (كبير)"
+    },
+    "price": "700,000 L.L.",
+    "description": {
+      "en": "Large portion of crunchy seasoned spiral curly fries served with warm cheddar sauce.",
+      "ar": "حجم كبير من البطاطا الكيرلي المقرمشة تقدم مع صوص الجبنة الشيدر اللذيذ."
+    },
+    "image": "/data/images/curly-fries-large.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "caesar-salad",
+    "categoryId": "salads",
+    "order": 1,
+    "name": {
+      "en": "Classic Caesar Salad",
+      "ar": "سلطة سيزر كلاسيك"
+    },
+    "price": "500,000 L.L.",
+    "description": {
+      "en": "Fresh iceberg lettuce, shaved parmesan cheese, cherry tomatoes, and crunchy herb croutons tossed in rich Caesar dressing.",
+      "ar": "خس آيسبيرغ طازج، جبنة بارميزان، بندورة كرزية وخبز كروتون محمص مع صوص السيزر الغني."
+    },
+    "image": "/data/images/caesar-salad.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "chicken-caesar-salad",
+    "categoryId": "salads",
+    "order": 2,
+    "name": {
+      "en": "Chicken Caesar Salad",
+      "ar": "سلطة سيزر بالدجاج المشوي"
+    },
+    "price": "600,000 L.L.",
+    "description": {
+      "en": "Tender sliced grilled chicken breast over fresh iceberg lettuce, parmesan cheese, cherry tomatoes, croutons, and Caesar dressing.",
+      "ar": "شرائح صدر دجاج مشوي طري، خس آيسبيرغ، جبنة بارميزان، بندورة كرزية وخبز كروتون مع صوص السيزر الخاص."
+    },
+    "image": "/data/images/chicken-caesar-salad.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "pasta-salad",
+    "categoryId": "salads",
+    "order": 3,
+    "name": {
+      "en": "Italian Pasta Salad",
+      "ar": "سلطة باستا إيطالية"
+    },
+    "price": "500,000 L.L.",
+    "description": {
+      "en": "Chilled pasta, crisp iceberg, cherry tomatoes, black olives, sweet corn, bell peppers, and shredded carrots in tangy lemon mustard dressing.",
+      "ar": "باستا، خس آيسبيرغ، بندورة كرزية، زيتون أسود، ذرة حلوة، فليفلة وجزر مبشور مع صوص الليمون والخردل."
+    },
+    "image": "/data/images/pasta-salad.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "tuna-pasta-salad",
+    "categoryId": "salads",
+    "order": 4,
+    "name": {
+      "en": "Tuna Pasta Salad",
+      "ar": "سلطة باستا بالتونا"
+    },
+    "price": "600,000 L.L.",
+    "description": {
+      "en": "Flaked light tuna, pasta, iceberg lettuce, cherry tomatoes, black olives, sweet corn, bell peppers, and carrots with lemon mustard vinaigrette.",
+      "ar": "تونا فاخرة، باستا، خس آيسبيرغ، بندورة كرزية، زيتون أسود، ذرة، فليفلة وجزر مع صوص الليمون والخردل المميز."
+    },
+    "image": "/data/images/tuna-pasta-salad.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "arizona-wrap",
+    "categoryId": "wraps",
+    "order": 1,
+    "name": {
+      "en": "Arizona Wrap",
+      "ar": "راب أريزونا"
+    },
+    "price": "500,000 L.L.",
+    "description": {
+      "en": "Grilled chicken marinated with soya sauce, melted mozzarella, fresh iceberg lettuce, sliced tomatoes, creamy avocado sauce, and sauce blanche in a toasted tortilla.",
+      "ar": "دجاج مشوي متبل بصوص الصويا، جبنة موزاريلا ذائبة، خس آيسبيرغ، بندورة، صوص أفوكادو كريمي وصوص بلانش في خبز التورتيلا المحمص."
+    },
+    "image": "/data/images/arizona-wrap.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "twister-wrap",
+    "categoryId": "wraps",
+    "order": 2,
+    "name": {
+      "en": "Twister Wrap",
+      "ar": "راب تويستر"
+    },
+    "price": "500,000 L.L.",
+    "description": {
+      "en": "Crispy fried golden chicken tenders, fresh iceberg lettuce, sliced tomatoes, mayonnaise, cocktail sauce, and warm melted cheddar sauce in rolled tortilla.",
+      "ar": "قطع دجاج مقلية مقرمشة، خس آيسبيرغ، بندورة طازجة، مايونيز، صوص كوكتيل وصوص شيدر ذائب في خبز التورتيلا."
+    },
+    "image": "/data/images/twister-wrap.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "boneless-wrap",
+    "categoryId": "wraps",
+    "order": 3,
+    "name": {
+      "en": "Boneless Wrap",
+      "ar": "راب بونلس"
+    },
+    "price": "500,000 L.L.",
+    "description": {
+      "en": "Crispy boneless fried chicken, sweet honey mustard, melted cheddar cheese sauce, crisp iceberg, and crunchy potato chips in warm tortilla.",
+      "ar": "قطع دجاج بونلس مقرمشة، صوص خردل بالعسل، صوص شيدر، رقائق شيبس مقرمشة وخس آيسبيرغ في خبز التورتيلا."
+    },
+    "image": "/data/images/boneless-wrap.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "cheese-filet-steak-wrap",
+    "categoryId": "wraps",
+    "order": 4,
+    "name": {
+      "en": "Cheese Filet Steak Wrap",
+      "ar": "راب تشيز فيليه ستيك"
+    },
+    "price": "650,000 L.L.",
+    "description": {
+      "en": "Tender grilled beef steak slices, sautéed onions, fresh mushrooms, rich mushroom sauce, melted mozzarella & cheddar sauces, pickles, iceberg, and mayo in toasted tortilla.",
+      "ar": "شرائح لحم بقر فيليه مشوية مع فطر طازج، بصل، صوص المشروم، جبنة موزاريلا، صوص شيدر، مخلل، خس ومايونيز في خبز التورتيلا."
+    },
+    "image": "/data/images/cheese-filet-steak-wrap.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "chicken-sub",
+    "categoryId": "sandwiches",
+    "order": 1,
+    "name": {
+      "en": "Chicken Sub",
+      "ar": "تشيكن صب"
+    },
+    "price": "500,000 L.L.",
+    "description": {
+      "en": "Tender grilled chicken tossed in soya sauce, melted mozzarella cheese, mayonnaise, sweet corn, pickles, and iceberg lettuce in warm toasted sub bread.",
+      "ar": "قطع دجاج مشوية مع صوص صويا، جبنة موزاريلا ذائبة، مايونيز، ذرة حلوة، مخلل وخس آيسبيرغ بخبز الصب المحمص."
+    },
+    "image": "/data/images/chicken-sub.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "francisco-sub",
+    "categoryId": "sandwiches",
+    "order": 2,
+    "name": {
+      "en": "Francisco Sub",
+      "ar": "سندويش فرانسيسكو"
+    },
+    "price": "500,000 L.L.",
+    "description": {
+      "en": "Special house-marinated grilled chicken, soya seasoning, melted mozzarella, sweet corn, and crisp iceberg lettuce.",
+      "ar": "دجاج مشوي متبل بخلطة الفرانسبسكو الخاصة مع صويا، جبنة موزاريلا ذائبة، ذرة حلوة وخس آيسبيرغ مقرمش."
+    },
+    "image": "/data/images/francisco-sub.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "fajita-sandwich",
+    "categoryId": "sandwiches",
+    "order": 3,
+    "name": {
+      "en": "Chicken Fajita Sub",
+      "ar": "سندويش فاهيتا دجاج"
+    },
+    "price": "550,000 L.L.",
+    "description": {
+      "en": "Grilled marinated chicken with sautéed green peppers, onions, fresh mushrooms, soya, spicy hot sauce, fajita sauce, creamy avocado sauce, sweet corn, and melted mozzarella.",
+      "ar": "دجاج مشوي مع فليفلة خضراء، بصل، فطر طازج، صوص فاهيتا متبل، صوص حار، صوص أفوكادو، ذرة وجبنة موزاريلا."
+    },
+    "image": "/data/images/fajita-sandwich.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "burrito-sandwich",
+    "categoryId": "sandwiches",
+    "order": 4,
+    "name": {
+      "en": "Chicken Burrito Sub",
+      "ar": "سندويش بوريتو دجاج"
+    },
+    "price": "550,000 L.L.",
+    "description": {
+      "en": "Juicy grilled chicken, smoked turkey slices, melted mozzarella, cheddar cheese, special burrito sauce, crunchy pickles, and iceberg lettuce.",
+      "ar": "دجاج مشوي شهي مع شرائح حبش مدخن، جبنة موزاريلا، جبنة شيدر، صوص بوريتو خاص، مخلل وخس آيسبيرغ."
+    },
+    "image": "/data/images/burrito-sandwich.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "mexican-chicken-sub",
+    "categoryId": "sandwiches",
+    "order": 5,
+    "name": {
+      "en": "Mexican Chicken Sub",
+      "ar": "سندويش مكسيكانو دجاج"
+    },
+    "price": "450,000 L.L.",
+    "description": {
+      "en": "Zesty Mexican-spiced chicken, sautéed onions, colorful bell peppers, sweet corn, pickles, iceberg lettuce, melted mozzarella, and cocktail sauce.",
+      "ar": "دجاج متبل على الطريقة المكسيكية مع بصل، فليفلة، ذرة، مخلل، خس آيسبيرغ، موزاريلا وصوص كوكتيل."
+    },
+    "image": "/data/images/mexican-chicken-sub.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "chinese-chicken-sub",
+    "categoryId": "sandwiches",
+    "order": 6,
+    "name": {
+      "en": "Chinese Chicken Sub",
+      "ar": "سندويش تشاينيز دجاج"
+    },
+    "price": "450,000 L.L.",
+    "description": {
+      "en": "Tender chicken cooked with Asian seasonings, sweet corn, pickles, crisp iceberg lettuce, and signature sauce blanche.",
+      "ar": "قطع دجاج متبلة بخلطة صينية شهية مع ذرة حلوة، مخلل، خس آيسبيرغ وصوص بلانش الأبيض المميز."
+    },
+    "image": "/data/images/chinese-chicken-sub.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "tawook-sandwich",
+    "categoryId": "sandwiches",
+    "order": 7,
+    "name": {
+      "en": "Shish Tawook Sandwich",
+      "ar": "سندويش شيش طاووق"
+    },
+    "price": "450,000 L.L.",
+    "description": {
+      "en": "Classic Lebanese grilled chicken tawook skewers with rich garlic cream, crispy fries, pickles, coleslaw, and ketchup.",
+      "ar": "قطع شيش طاووق طرية مشوية على الفحم مع كريم الثوم الأصلي، بطاطا مقلية، مخلل، سلطة كولسلو وكاتشب."
+    },
+    "image": "/data/images/tawook-sandwich.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "escalope-sub",
+    "categoryId": "sandwiches",
+    "order": 8,
+    "name": {
+      "en": "Chicken Escalope Sub",
+      "ar": "سندويش إسكالوب دجاج"
+    },
+    "price": "450,000 L.L.",
+    "description": {
+      "en": "Crispy breaded golden chicken escalope fillet with cocktail sauce, ketchup, pickles, french fries, and crunchy coleslaw.",
+      "ar": "صدر دجاج إسكالوب بانيه مقلي مقرمش مع صوص كوكتيل، كاتشب، مخلل، بطاطا مقلية وسلطة كولسلو."
+    },
+    "image": "/data/images/escalope-sub.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "crispy-sub",
+    "categoryId": "sandwiches",
+    "order": 9,
+    "name": {
+      "en": "Crispy Chicken Sub",
+      "ar": "سندويش كرسبي دجاج"
+    },
+    "price": "450,000 L.L.",
+    "description": {
+      "en": "Crunchy fried chicken strips with melted cheddar cheese, cocktail sauce, crunchy pickles, fries, and fresh coleslaw.",
+      "ar": "أصابع دجاج كرسبي مقرمشة ذهبية مع جبنة شيدر، صوص كوكتيل، مخلل، بطاطا مقلية وسلطة كولسلو."
+    },
+    "image": "/data/images/crispy-sub.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "steak-sub",
+    "categoryId": "sandwiches",
+    "order": 10,
+    "name": {
+      "en": "Steak Sub",
+      "ar": "ستيك صب لحم"
+    },
+    "price": "600,000 L.L.",
+    "description": {
+      "en": "Grilled tender beef steak with soya seasoning, sweet corn, crunchy pickles, sliced tomatoes, fresh iceberg lettuce, and melted mozzarella.",
+      "ar": "شرائح لحم بقر مشوية مع صوص صويا، ذرة، مخلل، بندورة طازجة، خس آيسبيرغ وجبنة موزاريلا ذائبة."
+    },
+    "image": "/data/images/steak-sub.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "philadelphia-sub",
+    "categoryId": "sandwiches",
+    "order": 11,
+    "name": {
+      "en": "Philadelphia Steak Sub",
+      "ar": "فيلادلفيا ستيك صب"
+    },
+    "price": "650,000 L.L.",
+    "description": {
+      "en": "Tender grilled steak beef, caramelized onions, green peppers, fresh mushrooms, melted mozzarella, BBQ sauce, and creamy mayonnaise.",
+      "ar": "لحم ستيك مشوي فاخر مع بصل مكرمل، فليفلة خضراء، فطر طازج، موزاريلا، صوص باربيكيو ومايونيز."
+    },
+    "image": "/data/images/philadelphia-sub.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "rosto-sub",
+    "categoryId": "sandwiches",
+    "order": 12,
+    "name": {
+      "en": "Rosto Beef Sub",
+      "ar": "روستو لحم صب"
+    },
+    "price": "550,000 L.L.",
+    "description": {
+      "en": "Cold-cut roast beef slices, mayonnaise, Dijon mustard, crisp pickles, sliced tomatoes, and iceberg lettuce.",
+      "ar": "شرائح لحم روستو بقر شهية وطرية مع مايونيز، خردل، مخلل مقرمش، شرائح بندورة وخس آيسبيرغ."
+    },
+    "image": "/data/images/rosto-sub.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "grilled-shrimp-sub",
+    "categoryId": "sandwiches",
+    "order": 13,
+    "name": {
+      "en": "Grilled Shrimp Sub",
+      "ar": "سندويش قريدس مشوي"
+    },
+    "price": "650,000 L.L.",
+    "description": {
+      "en": "Marinated grilled shrimps with creamy tartar sauce, cocktail sauce, crunchy pickles, and sweet corn.",
+      "ar": "حبات قريدس مشوية ومتبلة مع صوص تارتار وصوص كوكتيل، مخلل وذرة حلوة بخبز الصب المحمص."
+    },
+    "image": "/data/images/grilled-shrimp-sub.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "hot-grilled-shrimp-sub",
+    "categoryId": "sandwiches",
+    "order": 14,
+    "name": {
+      "en": "Hot Grilled Shrimp Sub",
+      "ar": "سندويش قريدس مشوي حار"
+    },
+    "price": "650,000 L.L.",
+    "description": {
+      "en": "Spicy seasoned grilled shrimps, fiery hot sauce, cocktail sauce, tartar sauce, pickles, and sweet corn.",
+      "ar": "قريدس مشوي حار متبل بصلصة حارة شهية، صوص كوكتيل، صوص تارتار، مخلل مقرمش وذرة حلوة."
+    },
+    "image": "/data/images/hot-grilled-shrimp-sub.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "shrimp-pane-sub",
+    "categoryId": "sandwiches",
+    "order": 15,
+    "name": {
+      "en": "Shrimp Pané Sub",
+      "ar": "سندويش قريدس بانيه مقلي"
+    },
+    "price": "600,000 L.L.",
+    "description": {
+      "en": "Crispy breaded golden fried shrimps with cocktail sauce, tartar sauce, pickles, sweet corn, fresh lettuce, and french fries inside.",
+      "ar": "قريدس مقلي ذهبي مقرمش مع صوص كوكتيل، صوص تارتار، مخلل، ذرة حلوة، خس طازج وبطاطا مقلية."
+    },
+    "image": "/data/images/shrimp-pane-sub.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "panino-chicken-ciabata",
+    "categoryId": "ciabata",
+    "order": 1,
+    "name": {
+      "en": "Panino Chicken Ciabatta",
+      "ar": "تشاباتا بانينو دجاج"
+    },
+    "price": "600,000 L.L.",
+    "description": {
+      "en": "Grilled chicken, honey mustard sauce, pickles, crisp iceberg lettuce, and melted mozzarella pressed in artisan Italian ciabatta.",
+      "ar": "دجاج مشوي طازج، صوص الخردل بالعسل، مخلل، خس آيسبيرغ وجبنة موزاريلا ذائبة في خبز التشاباتا الإيطالي المحمص على الجريل."
+    },
+    "image": "/data/images/panino-chicken-ciabata.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "panino-steak-ciabata",
+    "categoryId": "ciabata",
+    "order": 2,
+    "name": {
+      "en": "Panino Steak Ciabatta",
+      "ar": "تشاباتا بانينو ستيك"
+    },
+    "price": "650,000 L.L.",
+    "description": {
+      "en": "Grilled beef steak, sautéed onions, fresh mushrooms, signature panino sauce, and melted mozzarella in pressed ciabatta.",
+      "ar": "شرائح لحم بقر ستيك، فطر طازج، بصل مكرمل، صوص البانينو الخاص وموزاريلا ذائبة بخبز التشاباتا المحمص."
+    },
+    "image": "/data/images/panino-steak-ciabata.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "chicken-breast-ciabata",
+    "categoryId": "ciabata",
+    "order": 3,
+    "name": {
+      "en": "Chicken Breast Ciabatta",
+      "ar": "تشاباتا صدر دجاج"
+    },
+    "price": "600,000 L.L.",
+    "description": {
+      "en": "Grilled chicken breast, mayonnaise, sweet corn, iceberg lettuce, melted mozzarella, cheddar cheese, and cocktail sauce in toasted ciabatta.",
+      "ar": "صدر دجاج مشوي، مايونيز، ذرة حلوة، خس آيسبيرغ، جبنة موزاريلا وشيدر وصوص كوكتيل بخبز التشاباتا المقرمش."
+    },
+    "image": "/data/images/chicken-breast-ciabata.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "zinger-supreme-ciabata",
+    "categoryId": "ciabata",
+    "order": 4,
+    "name": {
+      "en": "Zinger Supreme Ciabatta",
+      "ar": "تشاباتا زنجر سوبريم"
+    },
+    "price": "650,000 L.L.",
+    "description": {
+      "en": "Crispy fried zinger chicken, smoked turkey, cheddar sauce, burrito sauce, mayonnaise, BBQ sauce, sliced tomatoes, and iceberg lettuce in pressed ciabatta.",
+      "ar": "دجاج زنجر حار مقرمش، حبش مدخن، صوص شيدر، صوص بوريتو، مايونيز، باربيكيو، بندورة وخس آيسبيرغ بخبز التشاباتا."
+    },
+    "image": "/data/images/zinger-supreme-ciabata.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "lebanese-beef-burger",
+    "categoryId": "beef-burger",
+    "order": 1,
+    "name": {
+      "en": "Lebanese Beef Burger",
+      "ar": "برغر لحم لبناني كلاسيك"
+    },
+    "price": "500,000 L.L.",
+    "description": {
+      "en": "Grilled beef patty, traditional Lebanese crunchy coleslaw, ketchup, and hot french fries inside the toasted bun.",
+      "ar": "قرص لحم بقر مشوي على الطريقة اللبنانية الأصيلة مع سلطة كولسلو، كاتشب وبطاطا مقلية داخل الخبز."
+    },
+    "image": "/data/images/lebanese-beef-burger.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "classic-beef-burger",
+    "categoryId": "beef-burger",
+    "order": 2,
+    "name": {
+      "en": "Classic Cheeseburger",
+      "ar": "كلاسيك تشيز برغر لحم"
+    },
+    "price": "500,000 L.L.",
+    "description": {
+      "en": "Charbroiled beef patty topped with melted cheddar, cocktail sauce, crunchy pickles, fresh sliced tomato, and iceberg lettuce.",
+      "ar": "قرص لحم بقر مشوي مع جبنة شيدر ذائبة، صوص كوكتيل، مخلل، شرائح بندورة طازجة وخس آيسبيرغ."
+    },
+    "image": "/data/images/classic-beef-burger.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "mushroom-beef-burger",
+    "categoryId": "beef-burger",
+    "order": 3,
+    "name": {
+      "en": "Mushroom Beef Burger",
+      "ar": "مشروم برغر لحم"
+    },
+    "price": "650,000 L.L.",
+    "description": {
+      "en": "Juicy beef burger topped with creamy mushroom sauce, melted cheddar sauce, cocktail sauce, pickles, and crisp iceberg lettuce.",
+      "ar": "برغر لحم بقر مع صوص الفطر الكريمي الغني، صوص شيدر، صوص كوكتيل، مخلل وخس آيسبيرغ مقرمش."
+    },
+    "image": "/data/images/mushroom-beef-burger.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "mexican-beef-burger",
+    "categoryId": "beef-burger",
+    "order": 4,
+    "name": {
+      "en": "Mexican Beef Burger",
+      "ar": "مكسيكان برغر لحم"
+    },
+    "price": "600,000 L.L.",
+    "description": {
+      "en": "Spicy beef patty with sautéed onions, green peppers, fiery hot sauce, cheddar sauce, cocktail sauce, pickles, and iceberg lettuce.",
+      "ar": "برغر لحم بقر حار مع بصل مشوي، فليفلة خضراء، صوص حار، صوص شيدر، صوص كوكتيل، مخلل وخس."
+    },
+    "image": "/data/images/mexican-beef-burger.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "mozzarella-beef-burger",
+    "categoryId": "beef-burger",
+    "order": 5,
+    "name": {
+      "en": "Mozzarella Beef Burger",
+      "ar": "موزاريلا برغر لحم"
+    },
+    "price": "600,000 L.L.",
+    "description": {
+      "en": "Grilled beef patty crowned with a thick fried crispy mozzarella patty, honey mustard, cocktail sauce, pickles, tomato, and lettuce.",
+      "ar": "قرص لحم بقر مشوي يعلوه قالب جبنة موزاريلا مقلية مقرمشة، صوص الخردل بالعسل، صوص كوكتيل، مخلل، بندورة وخس."
+    },
+    "image": "/data/images/mozzarella-beef-burger.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "american-beef-burger",
+    "categoryId": "beef-burger",
+    "order": 6,
+    "name": {
+      "en": "American Beef Burger",
+      "ar": "أمريكان برغر لحم"
+    },
+    "price": "600,000 L.L.",
+    "description": {
+      "en": "Grilled beef patty, melted cheddar cheese, smoky BBQ sauce, honey mustard, cocktail sauce, crunchy chips, onions, tomato, and lettuce.",
+      "ar": "برغر لحم أمريكي مع شيدر، صوص باربيكيو مدخن، خردل بالعسل، صوص كوكتيل، شيبس مقرمش، بصل، بندورة وخس."
+    },
+    "image": "/data/images/american-beef-burger.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "classic-chicken-burger",
+    "categoryId": "chicken-burger",
+    "order": 1,
+    "name": {
+      "en": "Classic Chicken Burger",
+      "ar": "كلاسيك تشيكن برغر"
+    },
+    "price": "500,000 L.L.",
+    "description": {
+      "en": "Grilled chicken fillet, melted cheddar sauce, cocktail sauce, mayonnaise, pickles, sliced tomato, and crisp iceberg lettuce.",
+      "ar": "صدر دجاج مشوي طري مع صوص شيدر ذائب، صوص كوكتيل، مايونيز، مخلل، شرائح بندورة وخس آيسبيرغ."
+    },
+    "image": "/data/images/classic-chicken-burger.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "crunchy-chicken-burger",
+    "categoryId": "chicken-burger",
+    "order": 2,
+    "name": {
+      "en": "Crunchy Chicken Burger",
+      "ar": "كرانشي تشيكن برغر"
+    },
+    "price": "500,000 L.L.",
+    "description": {
+      "en": "Ultra-crispy fried chicken fillet, crunchy potato chips, cheddar sauce, house panino sauce, cocktail sauce, pickles, and iceberg lettuce.",
+      "ar": "دجاج مقلي فائق القرمشة، رقائق شيبس مقرمشة، صوص شيدر، صوص البانينو، صوص كوكتيل، مخلل وخس آيسبيرغ."
+    },
+    "image": "/data/images/crunchy-chicken-burger.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "zinger-chicken-burger",
+    "categoryId": "chicken-burger",
+    "order": 3,
+    "name": {
+      "en": "Zinger Chicken Burger",
+      "ar": "زنجر برغر دجاج"
+    },
+    "price": "500,000 L.L.",
+    "description": {
+      "en": "Spicy golden fried chicken fillet topped with smoked turkey, warm cheddar sauce, mayonnaise, pickles, and iceberg lettuce.",
+      "ar": "فيليه دجاج زنجر مقلي حار ومقرمش، شرائح حبش مدخن، صوص شيدر، مايونيز، مخلل وخس آيسبيرغ."
+    },
+    "image": "/data/images/zinger-chicken-burger.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "mexican-chicken-burger",
+    "categoryId": "chicken-burger",
+    "order": 4,
+    "name": {
+      "en": "Mexican Chicken Burger",
+      "ar": "مكسيكان تشيكن برغر"
+    },
+    "price": "550,000 L.L.",
+    "description": {
+      "en": "Grilled spicy chicken, fiery hot sauce, sautéed onions, green peppers, cheddar sauce, mayonnaise, cocktail sauce, pickles, and lettuce.",
+      "ar": "دجاج مشوي حار، بصل مشوي، فليفلة خضراء، صوص حار، صوص شيدر، مايونيز، مخلل، خس وصوص كوكتيل."
+    },
+    "image": "/data/images/mexican-chicken-burger.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "mushroom-chicken-burger",
+    "categoryId": "chicken-burger",
+    "order": 5,
+    "name": {
+      "en": "Mushroom Chicken Burger",
+      "ar": "مشروم تشيكن برغر"
+    },
+    "price": "550,000 L.L.",
+    "description": {
+      "en": "Grilled chicken breast, rich creamy mushroom sauce, cheddar sauce, mayonnaise, cocktail sauce, pickles, and crisp iceberg lettuce.",
+      "ar": "صدر دجاج مشوي مع صوص الفطر الكريمي الغني، صوص شيدر، مايونيز، صوص كوكتيل، مخلل وخس آيسبيرغ."
+    },
+    "image": "/data/images/mushroom-chicken-burger.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "mozzarella-chicken-burger",
+    "categoryId": "chicken-burger",
+    "order": 6,
+    "name": {
+      "en": "Mozzarella Chicken Burger",
+      "ar": "موزاريلا تشيكن برغر"
+    },
+    "price": "600,000 L.L.",
+    "description": {
+      "en": "Grilled chicken breast, crispy golden fried mozzarella patty, honey mustard sauce, cheddar sauce, cocktail sauce, mayo, pickles, tomato, and lettuce.",
+      "ar": "صدر دجاج مشوي مع قالب جبنة موزاريلا مقلية مقرمشة، صوص خردل بالعسل، صوص شيدر، صوص كوكتيل، مخلل، بندورة وخس."
+    },
+    "image": "/data/images/mozzarella-chicken-burger.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "grilled-chicken-plate",
+    "categoryId": "plates",
+    "order": 1,
+    "name": {
+      "en": "Grilled Chicken Plate",
+      "ar": "صحن دجاج مشوي"
+    },
+    "price": "800,000 L.L.",
+    "description": {
+      "en": "Marinated tender grilled chicken breast fillets served with crispy french fries, Lebanese garlic cream, pickles, and fresh salad.",
+      "ar": "صحن صدور دجاج مشوية طرية متبلة تقدم مع بطاطا مقلية مقرمشة، كريم ثوم لبناني، مخلل وسلطة طازجة."
+    },
+    "image": "/data/images/grilled-chicken-plate.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "chicken-sub-plate",
+    "categoryId": "plates",
+    "order": 2,
+    "name": {
+      "en": "Chicken Sub Sliced Plate",
+      "ar": "صحن تشيكن صب مقطع"
+    },
+    "price": "800,000 L.L.",
+    "description": {
+      "en": "Generous toasted chicken sub sliced into portions, served with golden french fries, dipping sauces, and crunchy pickles.",
+      "ar": "سندويش تشيكن صب مقطع ومحمص يقدم مع بطاطا مقلية ذهبية، صوصات ومخلل مشكل."
+    },
+    "image": "/data/images/chicken-sub-plate.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "fajita-plate",
+    "categoryId": "plates",
+    "order": 3,
+    "name": {
+      "en": "Chicken Fajita Plate",
+      "ar": "صحن فاهيتا دجاج"
+    },
+    "price": "850,000 L.L.",
+    "description": {
+      "en": "Sizzling Mexican grilled chicken with bell peppers, onions, fresh mushrooms, corn, served with avocado dip, crispy fries, and pickles.",
+      "ar": "طبق فاهيتا دجاج متبل مع الفليفلة والبصل والفطر الطازج والذرة، يقدم مع صوص أفوكادو، بطاطا مقلية ومخلل."
+    },
+    "image": "/data/images/fajita-plate.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "tawook-plate",
+    "categoryId": "plates",
+    "order": 4,
+    "name": {
+      "en": "Shish Tawook Plate",
+      "ar": "صحن شيش طاووق"
+    },
+    "price": "800,000 L.L.",
+    "description": {
+      "en": "Skewers of charcoal-grilled juicy chicken tawook, served with golden fries, authentic garlic whip, coleslaw salad, and pickles.",
+      "ar": "قطع شيش طاووق مشوية طرية تقدم مع بطاطا مقلية، كريم ثوم، سلطة كولسلو ومخلل خيار ولفت."
+    },
+    "image": "/data/images/tawook-plate.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "escalope-plate",
+    "categoryId": "plates",
+    "order": 5,
+    "name": {
+      "en": "Chicken Escalope Plate",
+      "ar": "صحن إسكالوب دجاج"
+    },
+    "price": "800,000 L.L.",
+    "description": {
+      "en": "Crispy breaded golden chicken escalope cutlet served with french fries, cocktail sauce, creamy coleslaw, and pickles.",
+      "ar": "شريحة إسكالوب دجاج بانيه مقلية مقرمشة تقدم مع بطاطا مقلية، صوص كوكتيل، سلطة كولسلو ومخلل."
+    },
+    "image": "/data/images/escalope-plate.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "grilled-shrimp-plate",
+    "categoryId": "plates",
+    "order": 6,
+    "name": {
+      "en": "Grilled Shrimp Plate",
+      "ar": "صحن قريدس مشوي فاخر"
+    },
+    "price": "1,400,000 L.L.",
+    "description": {
+      "en": "Premium seasoned grilled shrimps served with crispy french fries, creamy tartar sauce, cocktail sauce, and pickles.",
+      "ar": "صحن قريدس مشوي متبل فاخر يقدم مع بطاطا مقلية مقرمشة، صوص تارتار، صوص كوكتيل ومخلل."
+    },
+    "image": "/data/images/grilled-shrimp-plate.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "fried-shrimp-plate",
+    "categoryId": "plates",
+    "order": 7,
+    "name": {
+      "en": "Fried Breaded Shrimp Plate",
+      "ar": "صحن قريدس بانيه مقلي"
+    },
+    "price": "1,050,000 L.L.",
+    "description": {
+      "en": "Golden crispy breaded fried shrimps served with tartar sauce, cocktail sauce, hot french fries, and pickles.",
+      "ar": "صحن قريدس بانيه مقلي مقرمش يقدم مع صوص تارتار، صوص كوكتيل، بطاطا مقلية ومخلل."
+    },
+    "image": "/data/images/fried-shrimp-plate.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "crispy-plate-3pcs",
+    "categoryId": "plates",
+    "order": 8,
+    "name": {
+      "en": "Crispy Chicken Meal (3 pcs)",
+      "ar": "وجبة كرسبي (٣ قطع)"
+    },
+    "price": "650,000 L.L.",
+    "description": {
+      "en": "3 golden crispy fried chicken tenders served with french fries, coleslaw, garlic dip, and cocktail sauce.",
+      "ar": "٣ قطع دجاج كرسبي مقرمشة تقدم مع بطاطا مقلية، سلطة كولسلو، ثوم وصوص كوكتيل."
+    },
+    "image": "/data/images/crispy-plate-3pcs.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "crispy-plate-5pcs",
+    "categoryId": "plates",
+    "order": 9,
+    "name": {
+      "en": "Crispy Chicken Meal (5 pcs)",
+      "ar": "وجبة كرسبي (٥ قطع)"
+    },
+    "price": "750,000 L.L.",
+    "description": {
+      "en": "5 crunchy golden fried chicken tenders served with french fries, coleslaw, garlic dip, and cocktail sauce.",
+      "ar": "٥ قطع دجاج كرسبي مقرمشة مع بطاطا مقلية، سلطة كولسلو، ثوم وصوص كوكتيل."
+    },
+    "image": "/data/images/crispy-plate-5pcs.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "crispy-plate-8pcs",
+    "categoryId": "plates",
+    "order": 10,
+    "name": {
+      "en": "Crispy Chicken Meal (8 pcs)",
+      "ar": "وجبة كرسبي (٨ قطع)"
+    },
+    "price": "1,000,000 L.L.",
+    "description": {
+      "en": "8 pieces of crunchy fried chicken strips, large french fries, coleslaw salad, garlic sauce, and cocktail sauce.",
+      "ar": "٨ قطع دجاج كرسبي مقرمشة، بطاطا مقلية كبيرة، سلطة كولسلو، ثوم وصوص كوكتيل."
+    },
+    "image": "/data/images/crispy-plate-8pcs.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "crispy-plate-10pcs",
+    "categoryId": "plates",
+    "order": 11,
+    "name": {
+      "en": "Crispy Chicken Meal (10 pcs)",
+      "ar": "وجبة كرسبي (١٠ قطع)"
+    },
+    "price": "1,100,000 L.L.",
+    "description": {
+      "en": "10 pieces of crunchy fried chicken strips served with large fries, coleslaw salad, garlic dip, and sauces.",
+      "ar": "١٠ قطع دجاج كرسبي مقرمشة تقدم مع بطاطا مقلية كبيرة، كولسلو، ثوم وصوصات."
+    },
+    "image": "/data/images/crispy-plate-10pcs.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "crispy-plate-15pcs",
+    "categoryId": "plates",
+    "order": 12,
+    "name": {
+      "en": "Crispy Chicken Feast (15 pcs)",
+      "ar": "وجبة كرسبي (١٥ قطعة)"
+    },
+    "price": "1,600,000 L.L.",
+    "description": {
+      "en": "15 pieces of crispy golden chicken tenders with extra large fries, double coleslaw, garlic dip, and cocktail sauces.",
+      "ar": "١٥ قطعة دجاج كرسبي مقرمشة مع بطاطا مقلية عائلية، سلطة كولسلو مضاعفة وصوصات."
+    },
+    "image": "/data/images/crispy-plate-15pcs.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "crispy-plate-25pcs",
+    "categoryId": "plates",
+    "order": 13,
+    "name": {
+      "en": "Crispy Family Mega Feast (25 pcs)",
+      "ar": "وجبة كرسبي عائلية ميغا (٢٥ قطعة)"
+    },
+    "price": "2,700,000 L.L.",
+    "description": {
+      "en": "Mega 25-piece crispy fried chicken tender feast, family-sized french fries, large coleslaw, pickles, garlic whip, and dipping sauces.",
+      "ar": "وجبة كرسبي عائلية ميغا ٢٥ قطعة مقرمشة، بطاطا مقلية عائلية كبيرة، كولسلو، مخلل، كريم ثوم وصوصات متنوعة."
+    },
+    "image": "/data/images/crispy-plate-25pcs.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "half-grilled-chicken",
+    "categoryId": "plates",
+    "order": 14,
+    "name": {
+      "en": "Half Grilled Chicken Meal",
+      "ar": "وجبة نصف فروج مشوي"
+    },
+    "price": "650,000 L.L.",
+    "description": {
+      "en": "Half charcoal-grilled seasoned chicken served with golden french fries, authentic garlic whip, salad, and pickles.",
+      "ar": "نصف فروج مشوي متبل على الفحم يقدم مع بطاطا مقلية، كريم ثوم، سلطة ومخلل."
+    },
+    "image": "/data/images/half-grilled-chicken.avif",
+    "isAvailable": true
+  },
+  {
+    "id": "whole-grilled-chicken",
+    "categoryId": "plates",
+    "order": 15,
+    "name": {
+      "en": "Whole Grilled Chicken Meal",
+      "ar": "وجبة فروج مشوي كامل"
+    },
+    "price": "1,200,000 L.L.",
+    "description": {
+      "en": "Whole tender grilled chicken seasoned with aromatic Mediterranean spices, served with french fries, garlic dip, fresh salad, and pickles.",
+      "ar": "فروج مشوي كامل متبل بالأعشاب والبهارات اللذيذة يقدم مع بطاطا مقلية، كريم ثوم، سلطة خضراء طازجة ومخلل."
+    },
+    "image": "/data/images/whole-grilled-chicken.avif",
+    "isAvailable": true
+  }
+]

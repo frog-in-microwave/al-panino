@@ -1,0 +1,12 @@
+{
+  "orderNumber": 2001,
+  "orderType": "Takeaway",
+  "items": [
+    {
+      "name": "Clean Test",
+      "price": 50000,
+      "quantity": 1
+    }
+  ],
+  "total": 50000
+}

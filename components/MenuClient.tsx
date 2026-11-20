@@ -1,11 +1,13 @@
 "use client";
 
 import { useState, useEffect, useMemo, useRef, MouseEvent, useTransition } from "react";
-import menuData from "../app/data/products.json";
+import categoriesData from "../app/data/categories.json";
+import itemsData from "../app/data/items.json";
 import FoodCard from "./FoodCard";
 import Header from "./Header";
 import Footer from "./Footer";
 import ItemModal from "./ItemModal";
+import CategoryIcon from "./CategoryIcon";
 
 import { Language, Category, Product } from "../types";
 import { siteText, FALLBACK_IMAGE, branches } from "../constants";
@@ -14,9 +16,15 @@ export default function MenuClient({ initialLang }: { initialLang: Language }) {
   const [lang, setLang] = useState<Language>(initialLang);
   const [activeProduct, setActiveProduct] = useState<Product | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>("");
+  const [isSticky, setIsSticky] = useState<boolean>(false);
+  const [spacerHeight, setSpacerHeight] = useState<number>(0);
   const [, startTransition] = useTransition();
 
   const navScrollRef = useRef<HTMLDivElement>(null);
+  const navRef = useRef<HTMLElement>(null);
+  const navSentinelRef = useRef<HTMLDivElement>(null);
+  const isStickyRef = useRef<boolean>(false);
+  const uncollapsedHeightRef = useRef<number>(140);
   const isUserClickingNav = useRef<boolean>(false);
 
   const t = siteText[lang];
@@ -24,14 +32,14 @@ export default function MenuClient({ initialLang }: { initialLang: Language }) {
 
   // 1. Categories sorted by order
   const categories = useMemo(() => {
-    return [...(menuData.categories as Category[])].sort(
+    return [...(categoriesData as Category[])].sort(
       (a, b) => (a.order || 9999) - (b.order || 9999)
     );
   }, []);
 
   // 2. All available products
   const allProducts = useMemo(() => {
-    return (menuData.products as Product[]).filter((p) => p.isAvailable !== false);
+    return (itemsData as Product[]).filter((p) => p.isAvailable !== false);
   }, []);
 
   // 3. Grouped products by category
@@ -81,6 +89,100 @@ export default function MenuClient({ initialLang }: { initialLang: Language }) {
     return textObj[lang] || textObj.en || "";
   };
 
+  // Auto-scroll the slider to the active category (first 4 vs last 4) when collapsed on mobile
+  useEffect(() => {
+    if (!isSticky || !navScrollRef.current) return;
+
+    const container = navScrollRef.current;
+    const isMobile = window.innerWidth < 768;
+    if (!isMobile) return;
+
+    const activeIdx = categories.findIndex((c) => c.id === activeCategory);
+    if (activeIdx < 0) return;
+
+    if (activeIdx < 4) {
+      container.firstElementChild?.scrollIntoView({
+        behavior: "smooth",
+        inline: "start",
+        block: "nearest",
+      });
+    } else {
+      container.lastElementChild?.scrollIntoView({
+        behavior: "smooth",
+        inline: "end",
+        block: "nearest",
+      });
+    }
+  }, [activeCategory, isSticky, categories]);
+
+  // Measure uncollapsed height on mount and resize
+  useEffect(() => {
+    const updateUncollapsedHeight = () => {
+      if (!isStickyRef.current && navRef.current) {
+        uncollapsedHeightRef.current = navRef.current.offsetHeight;
+      }
+    };
+    updateUncollapsedHeight();
+
+    const handleResize = () => {
+      const isMobile = window.innerWidth < 768;
+      const collapsedH = 48;
+      if (!isStickyRef.current && navRef.current) {
+        uncollapsedHeightRef.current = navRef.current.offsetHeight;
+      } else if (isStickyRef.current) {
+        const uncollapsedH = uncollapsedHeightRef.current || (isMobile ? 140 : 86);
+        setSpacerHeight(Math.max(0, uncollapsedH - collapsedH));
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Update sticky state helper
+  const updateStickyState = (stuck: boolean) => {
+    if (stuck !== isStickyRef.current) {
+      const isMobile = window.innerWidth < 768;
+      const collapsedH = 48;
+      if (stuck) {
+        if (navRef.current) {
+          uncollapsedHeightRef.current = navRef.current.offsetHeight;
+        }
+        const uncollapsedH = uncollapsedHeightRef.current || (isMobile ? 140 : 86);
+        setSpacerHeight(Math.max(0, uncollapsedH - collapsedH));
+      } else {
+        setSpacerHeight(0);
+        if (navScrollRef.current) {
+          navScrollRef.current.scrollLeft = 0;
+        }
+        requestAnimationFrame(() => {
+          if (navRef.current && !isStickyRef.current) {
+            uncollapsedHeightRef.current = navRef.current.offsetHeight;
+          }
+        });
+      }
+      isStickyRef.current = stuck;
+      setIsSticky(stuck);
+    }
+  };
+
+  // Sticky detection with IntersectionObserver
+  useEffect(() => {
+    const sentinel = navSentinelRef.current;
+    if (!sentinel) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const isStuck = !entry.isIntersecting && entry.boundingClientRect.top <= 0;
+        updateStickyState(isStuck);
+      },
+      { threshold: 0 }
+    );
+
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, []);
+
   // Smooth scroll to category
   const handleScrollToCategory = (e: MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
@@ -89,17 +191,15 @@ export default function MenuClient({ initialLang }: { initialLang: Language }) {
 
     const el = document.getElementById(id);
     if (el) {
-      const navEl = document.getElementById("category-nav");
-      const navOffset = navEl ? navEl.offsetHeight : 70;
-      const targetY = el.getBoundingClientRect().top + window.scrollY - navOffset - 10;
+      const collapsedNavHeight = 48;
+      const navOffset = collapsedNavHeight + 12;
+      const targetY = el.getBoundingClientRect().top + window.scrollY - navOffset;
 
-      window.scrollTo({ top: targetY, behavior: "smooth" });
+      window.scrollTo({ top: Math.max(0, targetY), behavior: "smooth" });
 
       setTimeout(() => {
-        const activeLink = document.querySelector(`.nav-pill[data-category-id="${id}"]`);
-        activeLink?.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
         isUserClickingNav.current = false;
-      }, 350);
+      }, 450);
     }
   };
 
@@ -110,9 +210,18 @@ export default function MenuClient({ initialLang }: { initialLang: Language }) {
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
+          // Keep sticky state in sync
+          if (navSentinelRef.current) {
+            const isStuck = navSentinelRef.current.getBoundingClientRect().top <= 0;
+            updateStickyState(isStuck);
+          }
+
           if (!isUserClickingNav.current) {
-            const navEl = document.getElementById("category-nav");
-            const navOffset = (navEl ? navEl.offsetHeight : 70) + 40;
+            const isMobile = window.innerWidth < 768;
+            const currentNavHeight = isStickyRef.current
+              ? 48
+              : (navRef.current?.offsetHeight || (isMobile ? 140 : 86));
+            const navOffset = currentNavHeight + 20;
 
             let currentId = activeCategory;
             for (const cat of categories) {
@@ -128,14 +237,6 @@ export default function MenuClient({ initialLang }: { initialLang: Language }) {
 
             if (currentId && currentId !== activeCategory) {
               setActiveCategory(currentId);
-              const activeLink = document.querySelector(
-                `.nav-pill[data-category-id="${currentId}"]`
-              );
-              activeLink?.scrollIntoView({
-                behavior: "smooth",
-                inline: "center",
-                block: "nearest",
-              });
             }
           }
           ticking = false;
@@ -153,24 +254,41 @@ export default function MenuClient({ initialLang }: { initialLang: Language }) {
       {/* 1. Brand Hero Header */}
       <Header lang={lang} changeLanguage={changeLanguage} />
 
-      {/* 2. Sticky Category Navigation (without count badges) */}
-      <nav id="category-nav" aria-label="Menu categories">
+      {/* Sticky detection sentinel */}
+      <div ref={navSentinelRef} className="nav-sticky-sentinel" aria-hidden="true" />
+
+      {/* Spacer to prevent layout shift when nav collapses */}
+      {isSticky && (
+        <div
+          className="nav-sticky-spacer"
+          style={{ height: `${spacerHeight}px` }}
+          aria-hidden="true"
+        />
+      )}
+
+      {/* 2. Category Block Navigation (turns into horizontal slider when collapsed on mobile) */}
+      <nav
+        id="category-nav"
+        ref={navRef}
+        className={isSticky ? "is-sticky" : ""}
+        aria-label="Menu categories"
+      >
         <div className="nav-container">
-          <div className="nav-scroll-wrapper" ref={navScrollRef}>
+          <div className="nav-blocks-grid" ref={navScrollRef}>
             {categories.map((cat) => {
               const isActive = activeCategory === cat.id;
 
               return (
                 <a
                   key={cat.id}
-                  className={`nav-pill ${isActive ? "active" : ""}`}
+                  className={`nav-block ${isActive ? "active" : ""}`}
                   href={`#${cat.id}`}
                   data-category-id={cat.id}
                   onClick={(e) => handleScrollToCategory(e, cat.id)}
                   aria-current={isActive ? "true" : undefined}
                 >
-                  {cat.icon && <i className={`${cat.icon} nav-pill-icon`} aria-hidden="true"></i>}
-                  <span className="nav-pill-label">{getText(cat.name)}</span>
+                  {cat.icon && <CategoryIcon icon={cat.icon} className="nav-block-icon" />}
+                  <span className="nav-block-label">{getText(cat.name)}</span>
                 </a>
               );
             })}
@@ -178,11 +296,10 @@ export default function MenuClient({ initialLang }: { initialLang: Language }) {
         </div>
       </nav>
 
-      {/* 3. Main Menu Content (Background matching the hero color) */}
+      {/* 3. Main Menu Content */}
       <main id="menu-container">
         {categories.map((cat) => {
           const items = productsByCategory[cat.id] || [];
-          if (items.length === 0) return null;
 
           return (
             <section
@@ -195,25 +312,41 @@ export default function MenuClient({ initialLang }: { initialLang: Language }) {
                 <div className="category-title-wrapper">
                   {cat.icon && (
                     <span className="category-header-icon" aria-hidden="true">
-                      <i className={cat.icon}></i>
+                      <CategoryIcon icon={cat.icon} />
                     </span>
                   )}
                   <h2 className="category-heading">{getText(cat.name)}</h2>
                 </div>
               </div>
 
-              <div className="cards-grid">
-                {items.map((product) => (
-                  <FoodCard
-                    key={product.id}
-                    product={product}
-                    lang={lang}
-                    offerText={t.offer}
-                    fallbackImage={FALLBACK_IMAGE}
-                    onSelect={setActiveProduct}
-                  />
-                ))}
-              </div>
+              {items.length > 0 ? (
+                <div className="cards-grid">
+                  {items.map((product) => (
+                    <FoodCard
+                      key={product.id}
+                      product={product}
+                      lang={lang}
+                      offerText={t.offer}
+                      fallbackImage={FALLBACK_IMAGE}
+                      onSelect={setActiveProduct}
+                    />
+                  ))}
+                </div>
+              ) : (
+                <div className="empty-category-card">
+                  <div className="empty-category-icon" aria-hidden="true">
+                    <CategoryIcon icon={cat.icon || "fa-solid fa-utensils"} />
+                  </div>
+                  <h3 className="empty-category-title">
+                    {lang === "ar" ? "قريباً" : "Coming Soon"}
+                  </h3>
+                  <p className="empty-category-desc">
+                    {lang === "ar"
+                      ? `أصناف ${getText(cat.name)} قيد الإعداد وستتوفر قريباً!`
+                      : `Items for ${getText(cat.name)} are being prepared and will be added soon!`}
+                  </p>
+                </div>
+              )}
             </section>
           );
         })}

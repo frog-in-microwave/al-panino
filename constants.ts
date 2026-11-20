@@ -1,4 +1,4 @@
-export const FALLBACK_IMAGE = "https://placehold.co/400x400?text=Al+Panino";
+export const FALLBACK_IMAGE = "/data/layout_images/logo_pic.avif";
 
 export const siteText = {
   en: {
