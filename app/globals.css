@@ -252,7 +252,7 @@ html[dir="rtl"] body {
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   z-index: 100;
-  padding: 8px 10px;
+  padding: 5px 10px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
   border-bottom: 2px solid rgba(211, 23, 0, 0.12);
   transition: padding 0.28s cubic-bezier(0.4, 0, 0.2, 1),
@@ -349,7 +349,7 @@ html[dir="rtl"] body {
     gap: 8px;
   }
   #category-nav.is-sticky {
-    padding: 6px 12px;
+    padding: 5px 12px;
   }
   #category-nav.is-sticky .nav-blocks-grid {
     display: grid;
@@ -459,7 +459,7 @@ html[dir="rtl"] body {
 
 @media (min-width: 768px) {
   #category-nav.is-sticky {
-    padding: 6px 12px;
+    padding: 5px 12px;
   }
   .nav-block {
     min-height: 68px;
