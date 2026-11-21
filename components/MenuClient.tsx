@@ -25,6 +25,7 @@ export default function MenuClient({ initialLang }: { initialLang: Language }) {
   const navSentinelRef = useRef<HTMLDivElement>(null);
   const isStickyRef = useRef<boolean>(false);
   const uncollapsedHeightRef = useRef<number>(140);
+  const headerHeightRef = useRef<number>(360);
   const isUserClickingNav = useRef<boolean>(false);
 
   const t = siteText[lang];
@@ -149,18 +150,31 @@ export default function MenuClient({ initialLang }: { initialLang: Language }) {
     return () => cancelAnimationFrame(rafId);
   }, [activeCategory, isSticky, categories]);
 
-  // Measure uncollapsed height on mount and resize
+  // Measure uncollapsed height and header offset on mount and resize
+  const getHeaderHeight = () => {
+    if (navSentinelRef.current) {
+      const rect = navSentinelRef.current.getBoundingClientRect();
+      const scrollY = window.scrollY || document.documentElement.scrollTop;
+      const measured = rect.top + scrollY;
+      if (measured > 0) return measured;
+    }
+    const isMobile = window.innerWidth < 768;
+    return isMobile ? 360 : 280;
+  };
+
   useEffect(() => {
-    const updateUncollapsedHeight = () => {
+    const updateHeights = () => {
+      headerHeightRef.current = getHeaderHeight();
       if (!isStickyRef.current && navRef.current) {
         uncollapsedHeightRef.current = navRef.current.offsetHeight;
       }
     };
-    updateUncollapsedHeight();
+    updateHeights();
 
     const handleResize = () => {
       const isMobile = window.innerWidth < 768;
       const collapsedH = 48;
+      headerHeightRef.current = getHeaderHeight();
       if (!isStickyRef.current && navRef.current) {
         uncollapsedHeightRef.current = navRef.current.offsetHeight;
       } else if (isStickyRef.current) {
@@ -203,11 +217,13 @@ export default function MenuClient({ initialLang }: { initialLang: Language }) {
     }
   };
 
-  // Check initial scroll on mount
+  // Check initial scroll on mount (e.g. page refresh when scrolled)
   useEffect(() => {
     const scrollY = window.scrollY || document.documentElement.scrollTop;
-    const isMobile = window.innerWidth < 768;
-    if (scrollY > (isMobile ? 50 : 80)) {
+    const hHeight = getHeaderHeight();
+    headerHeightRef.current = hHeight;
+    const collapseThreshold = Math.round(hHeight * 0.80);
+    if (scrollY > collapseThreshold) {
       updateStickyState(true);
     }
   }, []);
@@ -242,9 +258,10 @@ export default function MenuClient({ initialLang }: { initialLang: Language }) {
         window.requestAnimationFrame(() => {
           const scrollY = window.scrollY || document.documentElement.scrollTop;
           const isMobile = window.innerWidth < 768;
-          // Responsive upwards collapse trigger as soon as user slides/drags down past top bar
-          const collapseThreshold = isMobile ? 50 : 80;
-          const expandThreshold = 15;
+          const hHeight = headerHeightRef.current || getHeaderHeight();
+          // Navbar remains uncollapsed for ~80% of its travel up the screen before collapsing
+          const collapseThreshold = Math.round(hHeight * 0.80);
+          const expandThreshold = Math.round(hHeight * 0.70);
 
           if (!isStickyRef.current && scrollY > collapseThreshold) {
             updateStickyState(true);
