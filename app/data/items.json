@@ -172,7 +172,7 @@
       "en": "Chilled pasta, crisp iceberg, cherry tomatoes, black olives, sweet corn, bell peppers, and shredded carrots in tangy lemon mustard dressing.",
       "ar": "باستا، خس آيسبيرغ، بندورة كرزية، زيتون أسود، ذرة حلوة، فليفلة وجزر مبشور مع صوص الليمون والخردل."
     },
-    "image": "/data/images/pasta-salad.avif",
+    "image": "/data/images/salad-pasta.avif",
     "isAvailable": true
   },
   {
@@ -188,7 +188,7 @@
       "en": "Flaked light tuna, pasta, iceberg lettuce, cherry tomatoes, black olives, sweet corn, bell peppers, and carrots with lemon mustard vinaigrette.",
       "ar": "تونا فاخرة، باستا، خس آيسبيرغ، بندورة كرزية، زيتون أسود، ذرة، فليفلة وجزر مع صوص الليمون والخردل المميز."
     },
-    "image": "/data/images/tuna-pasta-salad.avif",
+    "image": "/data/images/salad-tuna.avif",
     "isAvailable": true
   },
   {
