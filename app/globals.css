@@ -273,15 +273,17 @@ html[dir="rtl"] body {
   max-width: 960px;
   margin: 0 auto;
   width: 100%;
+  overflow: visible;
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* 4 columns on mobile so all 8 categories fit in 2 rows, fully visible without scrolling when uncollapsed */
 .nav-blocks-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 6px;
   width: 100%;
+  padding: 3px 2px;
   transition: gap 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -292,35 +294,32 @@ html[dir="rtl"] body {
 /* Mobile Sticky Collapsed State: turns into a horizontal slider showing 4 items per view */
 @media (max-width: 767px) {
   .nav-block {
-    flex: 0 0 calc((100% - 18px) / 4);
-    min-width: calc((100% - 18px) / 4);
-    max-width: calc((100% - 18px) / 4);
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    flex: initial;
   }
 
   .nav-container {
-    max-height: 140px;
-    overflow: hidden;
-    transition: max-height 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: visible;
   }
 
   #category-nav.is-sticky .nav-container {
-    max-height: 42px;
-    overflow: hidden;
+    overflow: visible;
   }
 
   #category-nav.is-sticky .nav-blocks-grid {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
-    overflow-y: hidden;
+    overflow-y: visible;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
     gap: 6px;
-    padding: 2px 0;
+    padding: 3px 2px;
     width: 100%;
-    max-height: 38px;
     scroll-snap-type: x mandatory;
     overscroll-behavior-x: contain;
   }
